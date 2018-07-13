@@ -6,7 +6,9 @@ class Landing extends Component {
   render() {
     return (
         <div>
-            <Parallax imageSrc="/img/landing.jpg"/>
+            <div className="genreOverlay">
+                <Parallax id="landingCover" imageSrc="/img/landing.jpg"/>
+            </div>
             <div className="section white">
                 <div className="row container">
                 <h2 className="header">Parallax</h2>

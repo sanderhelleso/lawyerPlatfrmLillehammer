@@ -10,3 +10,27 @@
 body {
     height: 200vh;
 }
+
+#landingCover {
+    background-color: #8cffa0;
+    -webkit-mask-image: url("../img/landing.jpg");
+    mask-image: url("../img/landing.jpg");
+}
+
+.genreOverlay {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.genreOverlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+    rgba(0, 255, 149, 0.1), 
+    rgba(118, 0, 255, 0.9));
+}
