@@ -1,0 +1,16 @@
+{
+  "name": "lawyerplatfrmlillehammer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sander hellesø",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^1.5.2",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1"
+  }
+}
