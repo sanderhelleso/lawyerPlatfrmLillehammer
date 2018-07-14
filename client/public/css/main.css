@@ -58,6 +58,11 @@ recentArticleHeader .card-image img {
     letter-spacing: 2px;
 }
 
+.cardIntro {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
 #headingCont {
     position: absolute;
     z-index: 1337;
@@ -90,6 +95,10 @@ recentArticleHeader .card-image img {
     border-bottom: 1px solid #e0e0e0;
 }
 
+
+.tabs {
+    overflow-x: hidden;
+}
 .tabs .tab a {
     color: #424242 !important;
     letter-spacing: 2px;
@@ -97,4 +106,24 @@ recentArticleHeader .card-image img {
 
 .tabs .indicator {
     background-color: #424242 !important;
+}
+
+.collection-item {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #headingCont {
+        top: 30%;
+
+    }
+
+    #heading {
+        font-size: 30px;
+    }
+
+    #headingCont p {
+        width: 100%;
+    }
 }
