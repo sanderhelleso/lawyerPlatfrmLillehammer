@@ -43,7 +43,7 @@ body {
     rgba(20, 20, 20, 9));
 }
 
-.card-image img {
+#archiveCard img {
     min-height: 200px;
     max-height: 200px; 
 }

@@ -4,7 +4,7 @@ import { Col, Card, CardTitle, Tabs, Tab, Collection, CollectionItem, Icon } fro
 class Articles extends Component {
     renderRecent() {
         return(
-            <Col key={"recentArticle"} m={12} s={12} className="animated fadeIn">
+            <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
                 <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img1.jpg`} waves='light'>Januar </CardTitle> </a>}
                     title="Januar"
                     reveal={
@@ -27,7 +27,7 @@ class Articles extends Component {
         const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
         return months.map((month) =>
             <Col key={month} m={4} s={12} className="animated fadeIn">
-                <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${month}`}> <CardTitle reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle> </a>}
+                <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${month}`}> <CardTitle id="archiveCard" reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle> </a>}
                     title={month.toUpperCase()}
                     reveal={
                         <div>
