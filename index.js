@@ -6,6 +6,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
 const dotenv = require("dotenv").load();
+const mongoose = require("mongoose");
+
+require("./models/Article");
+
+// db
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGO_URI);
 
 // app
 const app = express();
