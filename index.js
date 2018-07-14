@@ -9,10 +9,28 @@ const dotenv = require("dotenv").load();
 const mongoose = require("mongoose");
 
 require("./models/Article");
+require("./models/Questions");
+require("./models/Tips");
 
 // db
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI);
+
+// schemas
+const articles = mongoose.model("articles");
+const Questions = mongoose.model("questions");
+const Tips = mongoose.model("tips");
+
+/*const question = new Question({
+    title: "test"
+});
+question.save();
+
+Question.findOne({ "title": "test" }, (err, article) => {
+    console.log(question.title);
+});*/
+
+
 
 // app
 const app = express();

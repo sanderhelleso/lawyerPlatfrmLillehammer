@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const articleSchema = new Schema({
+const questionSchema = new Schema({
     month: Number,
     title: String,
     body: String
 });
 
-mongoose.model("articles", articleSchema);
+mongoose.model("questions", questionSchema);
