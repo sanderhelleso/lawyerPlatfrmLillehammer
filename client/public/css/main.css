@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Lato');
+
 .noSelect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -9,18 +11,13 @@
 
 body {
     height: 200vh;
+    background-color: black;
+    font-family: 'Lato', sans-serif;
 }
 
-#landingCover {
-    background-color: #8cffa0;
-    -webkit-mask-image: url("../img/landing.jpg");
-    mask-image: url("../img/landing.jpg");
-}
-
-.genreOverlay {
+.genreOverlay, .card-image {
     display: block;
     position: relative;
-    cursor: pointer;
 }
 
 .genreOverlay::after {
@@ -31,6 +28,51 @@ body {
     height: 100%;
     width: 100%;
     background: linear-gradient(
-    rgba(0, 255, 149, 0.1), 
-    rgba(118, 0, 255, 0.9));
+    rgba(20, 20, 20, 0.5), 
+    rgba(0, 0, 0, 1));
 }
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+    rgba(20, 20, 20, 0.1), 
+    rgba(20, 20, 20, 9));
+}
+
+.card-image img {
+    min-height: 200px !important;
+    max-height: 200px !important; 
+}
+
+.card-title {
+    z-index: 1337;
+    letter-spacing: 2px;
+}
+
+#heading {
+    position: absolute;
+    z-index: 1337;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    letter-spacing: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+#recentTxt {
+    color: #424242;
+    letter-spacing: 2px;
+    padding-bottom: 40px;
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
