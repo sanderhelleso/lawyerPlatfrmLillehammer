@@ -17,16 +17,19 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI);
 
 // schemas
-const articles = mongoose.model("articles");
-const Questions = mongoose.model("questions");
-const Tips = mongoose.model("tips");
+const Article = mongoose.model("articles");
+const Question = mongoose.model("questions");
+const Tip = mongoose.model("tips");
 
-/*const question = new Question({
-    title: "test"
+/*const article = new Article({
+    year: new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
+    title: "Månedens sak i høyesteretten",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus sapien, consequat sed dolor quis, rutrum facilisis leo. Sed quis rhoncus lorem. Aliquam erat volutpat. Sed aliquet, elit eget maximus euismod, justo libero aliquam metus, eu elementum ipsum massa sed quam. Integer molestie, dolor ut pellentesque pretium, velit augue suscipit nunc, a suscipit elit lorem pellentesque est. Suspendisse nec placerat mauris, ullamcorper semper lectus. Aenean ac rutrum lectus, ut consectetur libero. Nulla lacinia quam quis purus convallis tempus. Nunc porttitor sit amet velit id porttitor. Sed ac orci vel neque vestibulum sodales sed et felis."
 });
-question.save();
+article.save();
 
-Question.findOne({ "title": "test" }, (err, article) => {
+/*Question.findOne({ "title": "test" }, (err, article) => {
     console.log(question.title);
 });*/
 
@@ -41,6 +44,8 @@ const host = process.env.HOST || 'localhost';
 // body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+require("./routes/recentRoutes")(app);
 
 // start server
 server.listen(port, host);
