@@ -39,7 +39,7 @@ class Articles extends Component {
                             </Collection>
                         </div>
                     }>
-                    <p className="cardIntro">Here is some more information about this product that is only revealed once clicked on.</p>
+                    <p className="cardIntro" onClick={expandCard}>Here is some more information about this product that is only revealed once clicked on.</p>
                     <p><a className="teal-text font-weight-bold" href={`/arkiv/${new Date().getFullYear()}/${month}`}>Les mer</a></p>
                 </Card>
             </Col>
@@ -58,7 +58,7 @@ class Articles extends Component {
                         <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
                         <Row>
                             <Col l={10} m={9} s={2}/>
-                            <Input className="animated fadeIn" l={2} m={3} s={8} type='select' label="År" defaultValue='1'>
+                            <Input l={2} m={3} s={8} type='select' label="År" defaultValue='1'>
                                 <option value='1'>2018</option>
                                 <option value='2'>2019</option>
                                 <option value='3'>2020</option>
@@ -72,6 +72,10 @@ class Articles extends Component {
             </div>
         )
     }
+}
+
+function expandCard() {
+    console.log(this);
 }
 
 export default Articles;
