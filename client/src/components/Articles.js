@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Col, Card, CardTitle, Tabs, Tab } from "react-materialize";
+import { Col, Card, CardTitle, Tabs, Tab, Collection, CollectionItem, Icon } from "react-materialize";
 
 class Articles extends Component {
     renderRecent() {
         return(
-            <Col key={"recentArticle"} m={12} s={12}>
+            <Col key={"recentArticle"} m={12} s={12} className="animated fadeIn">
                 <Card className="cardHeader recentArticleHeader" header={<CardTitle reveal image={`/img/img1.jpg`} waves='light'>Januar </CardTitle>}
                     title="Januar"
                     reveal={<p>Here is some more information about this product that is only revealed once clicked on.
@@ -21,15 +21,20 @@ class Articles extends Component {
     renderArchive() {
         const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
         return months.map((month) =>
-            <Col key={month} m={4} s={12}>
-                <Card className="cardHeader" header={<CardTitle reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle>}
+            <Col key={month} m={4} s={12} className="animated fadeIn">
+                <Card className="cardHeader z-depth-2" header={<CardTitle reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle>}
                     title={month.toUpperCase()}
-                    reveal={<p>Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                    </p>}>
-                    <p><a href="#">Les mer</a></p>
+                    reveal={
+                        <div>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            <Collection>
+                                <CollectionItem href={`/arkiv/${month}/manedenssak`}><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
+                                <CollectionItem href={`/arkiv/${month}/femkjappe`}><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
+                                <CollectionItem href={`/arkiv/${month}/studenttips`}><Icon small left>school</Icon> Studenttips</CollectionItem>
+                            </Collection>
+                        </div>
+                    }>
+                    <p><a href={`/arkiv/${month}`}>Les mer</a></p>
                 </Card>
             </Col>
         );
@@ -39,12 +44,12 @@ class Articles extends Component {
         return (
             <div className="section white container">
                 <Tabs className='tabs'>
-                    <Tab title="Siste nytt">
-                        <h3 id="recentTxt" className="center-align">Siste nytt</h3>
+                    <Tab title="Siste nytt" className="animated fadeIn">
+                        <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
                         {this.renderRecent()}
                     </Tab>
-                    <Tab title="Arkiv" active>
-                        <h3 id="recentTxt" className="center-align">Arkiv</h3>
+                    <Tab title="Arkiv" className="animated fadeIn" active>
+                        <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
                         <div className="row">
                             {this.renderArchive()}
                         </div>

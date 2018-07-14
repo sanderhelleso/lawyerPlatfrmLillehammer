@@ -7,7 +7,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                <div id="headingCont">
+                <div id="headingCont" className="animated fadeIn">
                     <h1 id="heading" className="center-align">JUSSBLOGGEN</h1>
                     <p className="center-align">Jurdiske nyheter og tips for jussstudentene i Lillehammer</p>
                 </div>
