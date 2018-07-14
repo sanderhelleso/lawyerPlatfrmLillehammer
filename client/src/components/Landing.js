@@ -7,7 +7,10 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                <h1 id="heading">JUSSBLOGG</h1>
+                <div id="headingCont">
+                    <h1 id="heading" className="center-align">JUSSBLOGGEN</h1>
+                    <p className="center-align">Jurdiske nyheter og tips for jussstudentene i Lillehammer</p>
+                </div>
                 <div className="genreOverlay">
                     <Parallax id="landingCover" imageSrc="/img/landing.jpg"/>
                 </div>
