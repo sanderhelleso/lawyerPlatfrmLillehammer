@@ -5,14 +5,19 @@ class Articles extends Component {
     renderRecent() {
         return(
             <Col key={"recentArticle"} m={12} s={12} className="animated fadeIn">
-                <Card className="cardHeader recentArticleHeader" header={<CardTitle reveal image={`/img/img1.jpg`} waves='light'>Januar </CardTitle>}
+                <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img1.jpg`} waves='light'>Januar </CardTitle> </a>}
                     title="Januar"
-                    reveal={<p>Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                        Here is some more information about this product that is only revealed once clicked on.
-                    </p>}>
-                    <p><a href="#">Les mer</a></p>
+                    reveal={
+                        <div>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            <Collection>
+                                <CollectionItem href="/sistenytt/manedenssak"><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
+                                <CollectionItem href="/sistenytt/femkjappe"><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
+                                <CollectionItem href="/sistenytt/studenttips"><Icon small left>school</Icon> Studenttips</CollectionItem>
+                            </Collection>
+                        </div>
+                    }>
+                    <p><a href="/sistenytt">Les mer</a></p>
                 </Card>
             </Col>
         )
@@ -22,7 +27,7 @@ class Articles extends Component {
         const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
         return months.map((month) =>
             <Col key={month} m={4} s={12} className="animated fadeIn">
-                <Card className="cardHeader z-depth-2" header={<CardTitle reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle>}
+                <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${month}`}> <CardTitle reveal image={`/img/img${months.indexOf(month) + 1}.jpg`} waves='light'>{month.toUpperCase()} </CardTitle> </a>}
                     title={month.toUpperCase()}
                     reveal={
                         <div>
