@@ -4,13 +4,6 @@ import RecentArticle from './RecentArticle';
 import Article from "./Article";
 
 class Articles extends Component {
-    renderArchive() {
-        const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
-        return months.map((month) =>
-            <Article key={month} month={month} id={1}/>
-        );
-    }
-
     render() {
         return (
             <div className="section white container">
@@ -30,7 +23,7 @@ class Articles extends Component {
                             </Input>
                         </Row>
                         <Row>
-                            {this.renderArchive()}
+                            <Article />
                         </Row>
                     </Tab>
                 </Tabs>

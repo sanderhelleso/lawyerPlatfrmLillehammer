@@ -67,6 +67,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/recentRoutes")(app);
+require("./routes/archiveRoutes")(app);
 
 // start server
 server.listen(port, host);
