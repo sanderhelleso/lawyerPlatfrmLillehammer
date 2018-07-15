@@ -5,8 +5,8 @@ class RecentArticle extends Component {
     componentWillMount() {
         console.log(123);
         fetch("/api/sistenytt")
-        .then(response => {
-            return response.json();
+        .then(res => {
+            return res.json();
         })
         .then(data => {
             console.log(data);
