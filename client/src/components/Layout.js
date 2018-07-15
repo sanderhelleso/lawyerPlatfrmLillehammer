@@ -61,8 +61,8 @@ function buildPath(url) {
 }
 
 function setTitle(section) {
-    console.log(section[section.length - 1]);
-    return section[section.length - 1];
+    const sectionPath = section[section.length - 1];
+    return `Månedens ${sectionPath}`;
 }
 
 export default Layout;
