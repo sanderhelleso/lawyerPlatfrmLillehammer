@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
-import { Footer, Icon } from "react-materialize";
+import { Footer } from "react-materialize";
 
 class MainFooter extends Component {
     render() {

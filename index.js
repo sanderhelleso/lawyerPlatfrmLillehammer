@@ -14,7 +14,15 @@ require("./models/Tips");
 
 // db
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI);
+const connectWithRetry = () => {
+    return mongoose.connect(process.env.MONGO_URI, err => {
+        if (err) {
+            console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+            setTimeout(connectWithRetry, 5000);
+        }
+    });
+};
+connectWithRetry();
 
 // schemas
 const Article = mongoose.model("articles");

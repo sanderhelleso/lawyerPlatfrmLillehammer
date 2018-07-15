@@ -47,8 +47,4 @@ class Article extends Component {
     }
 }
 
-function getIndexOfMonth(month) {
-    return MONTHS.indexOf(month) + 1;
-}
-
 export default Article;

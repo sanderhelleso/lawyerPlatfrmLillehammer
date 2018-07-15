@@ -13,7 +13,9 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Route exact path="/" component={Landing} /> 
-                    <Route exact path="/sistenytt/*" component={Layout} />  
+                    <Route exact path="/sistenytt/manedenssak" component={Layout} />  
+                    <Route exact path="/sistenytt/studenttips" component={Layout} />  
+                    <Route exact path="/sistenytt/femkjappe" component={Layout} />  
                     <Route path="/" component={MainFooter} /> 
                 </div>
             </BrowserRouter>

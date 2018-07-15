@@ -6,7 +6,7 @@ import Article from "./Article";
 class Articles extends Component {
     render() {
         return (
-            <div className="section white container">
+            <div className="section container">
                 <Tabs className='tabs'>
                     <Tab title="Siste nytt" className="animated fadeIn">
                         <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
@@ -30,10 +30,6 @@ class Articles extends Component {
             </div>
         )
     }
-}
-
-function expandCard() {
-    console.log(this);
 }
 
 export default Articles;

@@ -110,9 +110,12 @@ recentArticleHeader .card-image img {
     border-bottom: 1px solid #e0e0e0;
 }
 
+.section {
+}
 
 .tabs {
     overflow-x: hidden;
+    background-color: #fafafa !important;
 }
 .tabs .tab a {
     color: #424242 !important;
