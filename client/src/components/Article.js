@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Card, CardTitle, Collection, CollectionItem, Icon } from "react-materialize";
+import { MONTHS } from "../globals/months";
 
 class Article extends Component {
     render() {
@@ -26,8 +27,7 @@ class Article extends Component {
 }
 
 function getIndexOfMonth(month) {
-    const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
-    return months.indexOf(month) + 1;
+    return MONTHS.indexOf(month) + 1;
 }
 
 export default Article;

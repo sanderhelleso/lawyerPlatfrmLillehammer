@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Card, CardTitle, Collection, CollectionItem, Icon } from "react-materialize";
-import { MONTHS } from "../globals";
+import { MONTHS } from "../globals/months";
 
 class RecentArticle extends Component {
     state = {
@@ -8,14 +8,15 @@ class RecentArticle extends Component {
     };
 
     async loadData() {
+        console.log(123);
         const res = await fetch("/api/sistenytt");
         const json = await res.json();
         this.setState({
-            data: json,
+            data: json
         })
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.loadData();
     }
 
@@ -26,7 +27,7 @@ class RecentArticle extends Component {
             return (
                 <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
                     <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img${data.month}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
-                        title={monthName}
+                        title={`JUSSPOST #${data.id}`}
                         reveal={
                             <div>
                                 <p>Here is some more information about this product that is only revealed once clicked on.</p>

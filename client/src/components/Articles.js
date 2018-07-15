@@ -17,7 +17,7 @@ class Articles extends Component {
                 <Tabs className='tabs'>
                     <Tab title="Siste nytt" className="animated fadeIn">
                         <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
-                        <RecentArticle month={1}/>
+                        <RecentArticle />
                     </Tab>
                     <Tab title="Arkiv" className="animated fadeIn" active>
                         <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
