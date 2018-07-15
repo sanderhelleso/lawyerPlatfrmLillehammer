@@ -3,7 +3,7 @@ import { Parallax } from "react-materialize";
 import { MONTHS } from "../globals/months";
 import Share from "./Share";
 
-class Studenttips extends Component {
+class Layout extends Component {
     state = {
         data: [],
     };
@@ -46,4 +46,4 @@ class Studenttips extends Component {
     }
 }
 
-export default Studenttips;
+export default Layout;
