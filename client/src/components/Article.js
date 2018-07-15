@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Col, Card, CardTitle, Tabs, Tab, Collection, CollectionItem, Icon, Input, Row } from "react-materialize";
+import { Col, Card, CardTitle, Collection, CollectionItem, Icon } from "react-materialize";
 
 class Article extends Component {
     render() {
         return (
-            <Col key={this.props.month} l={4} m={6} s={12} className="animated fadeIn">
+            <Col l={4} m={6} s={12} className="animated fadeIn">
             <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${new Date().getFullYear()}/${this.props.month}`}><CardTitle id="archiveCard" reveal image={`/img/img${getIndexOfMonth(this.props.month)}.jpg`} waves='light'>{this.props.month.toUpperCase()} </CardTitle> </a>}
                 title={`JUSSPOST #${this.props.id}`}
                 reveal={

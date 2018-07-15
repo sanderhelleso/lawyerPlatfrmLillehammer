@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, Card, CardTitle, Tabs, Tab, Collection, CollectionItem, Icon, Input, Row } from "react-materialize";
+import { Col, Tabs, Tab, Input, Row } from "react-materialize";
 import RecentArticle from './RecentArticle';
 import Article from "./Article";
 
@@ -7,7 +7,7 @@ class Articles extends Component {
     renderArchive() {
         const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "oktober", "september", "november", "desember"];
         return months.map((month) =>
-            <Article month={month} id={1}/>
+            <Article key={month} month={month} id={1}/>
         );
     }
 
@@ -17,7 +17,7 @@ class Articles extends Component {
                 <Tabs className='tabs'>
                     <Tab title="Siste nytt" className="animated fadeIn">
                         <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
-                        <RecentArticle />
+                        <RecentArticle month={1}/>
                     </Tab>
                     <Tab title="Arkiv" className="animated fadeIn" active>
                         <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
