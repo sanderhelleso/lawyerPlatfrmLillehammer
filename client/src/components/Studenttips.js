@@ -33,12 +33,10 @@ class Studenttips extends Component {
                         <h2 id="headingYear">{data.year}</h2>
                     </div>
                     <div className="container">
-                        <h3 id="layoutTitle">Månedens studenttips</h3>
+                        <h3 id="layoutTitle" className="center-align">Månedens studenttips</h3>
                         <hr />
-                        <p id="layoutBody">{data.body}</p>
+                        <p id="layoutBody" className="container">{data.body}</p>
                         <hr id="shareHr" />
-                        <h5 id="shareHeading" className="center-align">Kjenner du noen som kan ha nytte av månedens tips?</h5>
-                        <p id="shareSubTxt" className="center-align">Del på sosiale medier</p>
                         <Share />
                     </div>
                 </section>

@@ -7,7 +7,7 @@ class MainFooter extends Component {
         return (
             <Footer copyrights="&copy; 2018 Jussbloggen"
                 moreLinks={
-                    <a className="right" href="#!">Utviklet og levert av Semanta</a>
+                    <a className="right" href="http://semanta.no/"><img src="/img/semanta.png" alt="Semanta Logo" /> Utviklet og levert av Semanta</a>
                 }
                 links={
                     <ul id="footerLinks">
