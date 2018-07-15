@@ -9,4 +9,5 @@ const questionSchema = new Schema({
     body: String
 });
 
+questionSchema.plugin(AutoIncrement, {inc_field: 'question_id'});
 mongoose.model("questions", questionSchema);

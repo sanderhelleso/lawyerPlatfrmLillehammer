@@ -21,7 +21,7 @@ const Article = mongoose.model("articles");
 const Question = mongoose.model("questions");
 const Tip = mongoose.model("tips");
 
-const article = new Article({
+/*const article = new Article({
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
     title: "Månedens sak i høyesteretten",
@@ -49,7 +49,7 @@ const tip = new Tip({
 });
 tip.save(() => {
     console.log("SAVED TIP");
-});
+});*/
 
 
 /*Question.findOne({ "title": "test" }, (err, article) => {

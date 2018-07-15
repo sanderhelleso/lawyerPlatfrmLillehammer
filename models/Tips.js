@@ -9,4 +9,5 @@ const tipsSchema = new Schema({
     body: String
 });
 
+tipsSchema.plugin(AutoIncrement, {inc_field: 'tips_id'});
 mongoose.model("tips", tipsSchema);

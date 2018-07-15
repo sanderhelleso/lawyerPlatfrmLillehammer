@@ -10,5 +10,5 @@ const articleSchema = new Schema({
     body: String
 });
 
-articleSchema.plugin(AutoIncrement, {inc_field: 'id'});
+articleSchema.plugin(AutoIncrement, {inc_field: 'article_id'});
 mongoose.model("articles", articleSchema);
