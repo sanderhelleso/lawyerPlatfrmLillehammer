@@ -22,7 +22,6 @@ class Studenttips extends Component {
 
     render() {
         const layout = this.state.data.map((data) => {
-            console.log(data);
             return (
                 <section key={data.title}>
                     <div className="genreOverlay">
@@ -45,7 +44,6 @@ class Studenttips extends Component {
                 </section>
             )
         });
-
         return layout;
     }
 }
