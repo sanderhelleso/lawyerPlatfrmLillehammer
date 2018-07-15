@@ -32,7 +32,7 @@ class Layout extends Component {
                         <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`}/>
                     </div>
                     <div id="headingCont">
-                        <h1 id="heading">{this.state.section}</h1>
+                        <h1 id="heading">{this.state.section[0]}</h1>
                         <h5 id="headingMonth">{MONTHS[data.month]}</h5>
                         <h2 id="headingYear">{data.year}</h2>
                     </div>
@@ -41,6 +41,8 @@ class Layout extends Component {
                         <hr />
                         <p id="layoutBody" className="container">{data.body}</p>
                         <hr id="shareHr" />
+                        <h5 id="shareHeading" className="center-align">{this.state.section[1]}</h5>
+                        <p id="shareSubTxt" className="center-align">Del på sosiale medier</p>
                         <Share />
                     </div>
                 </section>
@@ -63,10 +65,10 @@ function buildPath(url) {
 function setTitle(section) {
     const sectionPath = section[section.length - 1];
     if (sectionPath === "manedenssak") {
-        return "Månedens sak i høyesteretten";
+        return ["Månedens sak i høyesteretten", "Kjenner du noen som vil finne denne saken interessant?"];
     }
 
-    return `Månedens ${sectionPath}`;
+    return [`Månedens ${sectionPath}`, `Kjenner du noen som kan ha nytte av månedens ${sectionPath}?`];
 }
 
 export default Layout;

@@ -5,9 +5,6 @@ import { Row, Col } from "react-materialize";
 class Share extends Component {
     render() {
         return (
-            <div>
-                <h5 id="shareHeading" className="center-align">Kjenner du noen som kan ha nytte av månedens tips?</h5>
-                <p id="shareSubTxt" className="center-align">Del på sosiale medier</p>
                 <div className="container">
                     <Row id="share">
                         <Col s={4} m={2} l={2} offset="l2 m2 s2" className="valign-wrapper">
@@ -24,7 +21,6 @@ class Share extends Component {
                         </Col>
                     </Row>
                 </div>
-            </div>
         )
     }
 }
