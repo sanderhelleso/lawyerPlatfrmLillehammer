@@ -8,6 +8,9 @@
     },
     "/api/arkiv": {
       "target": "http://localhost:5000"
+    },
+    "/api/sistenytt/studenttips": {
+      "target": "http://localhost:5000"
     }
   },
   "dependencies": {

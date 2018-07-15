@@ -9,4 +9,10 @@ module.exports = app => {
             res.send(data);
         });
     });
+
+    app.get("/api/sistenytt/studenttips", (req, res) => {
+        Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+            res.send(data);
+        });
+    });
 }
