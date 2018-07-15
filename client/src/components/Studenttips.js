@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Parallax } from "react-materialize";
 import { MONTHS } from "../globals/months";
 
 class Studenttips extends Component {
@@ -7,7 +8,6 @@ class Studenttips extends Component {
     };
 
     async loadData() {
-        console.log(123);
         const res = await fetch("/api/sistenytt/studenttips");
         const json = await res.json();
         this.setState({
@@ -23,12 +23,21 @@ class Studenttips extends Component {
         const layout = this.state.data.map((data) => {
             console.log(data);
             return (
-            <div key={data.title} className="container">
-                <h1>{data.title}</h1>
-                <h5>{MONTHS[data.month]}</h5>
-                <h4>{data.year}</h4>
-                <p>{data.body}</p>
-            </div>
+                <section key={data.title}>
+                    <div className="genreOverlay">
+                        <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`}/>
+                    </div>
+                    <div id="headingCont">
+                        <h1 id="heading">Månedens studenttips</h1>
+                        <h5 id="headingMonth">{MONTHS[data.month]}</h5>
+                        <h2 id="headingYear">{data.year}</h2>
+                    </div>
+                    <div className="container">
+                        <h3 id="layoutTitle">Månedens studenttips</h3>
+                        <hr />
+                        <p id="layoutBody">{data.body}</p>
+                    </div>
+                </section>
             )
         });
 
