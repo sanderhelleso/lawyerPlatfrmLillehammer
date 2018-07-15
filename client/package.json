@@ -11,6 +11,9 @@
     },
     "/api/sistenytt/studenttips": {
       "target": "http://localhost:5000"
+    },
+    "/api/sistenytt/femkjappe": {
+      "target": "http://localhost:5000"
     }
   },
   "dependencies": {
