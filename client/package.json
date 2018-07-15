@@ -14,6 +14,9 @@
     },
     "/api/sistenytt/femkjappe": {
       "target": "http://localhost:5000"
+    },
+    "/api/sistenytt/manedenssak": {
+      "target": "http://localhost:5000"
     }
   },
   "dependencies": {

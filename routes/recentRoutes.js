@@ -10,6 +10,12 @@ module.exports = app => {
         });
     });
 
+    app.get("/api/sistenytt/manedenssak", (req, res) => {
+        Article.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+            res.send(data);
+        });
+    });
+
     app.get("/api/sistenytt/femkjappe", (req, res) => {
         Question.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);

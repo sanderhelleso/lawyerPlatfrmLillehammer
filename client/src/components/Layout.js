@@ -62,6 +62,10 @@ function buildPath(url) {
 
 function setTitle(section) {
     const sectionPath = section[section.length - 1];
+    if (sectionPath === "manedenssak") {
+        return "Månedens sak i høyesteretten";
+    }
+
     return `Månedens ${sectionPath}`;
 }
 
