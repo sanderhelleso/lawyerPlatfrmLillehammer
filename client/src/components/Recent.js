@@ -37,21 +37,21 @@ class Recent extends Component {
                             <Col l={4} m={4} s={12} className="animated fadeIn">
                                 <Card className='large'
                                     header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
-                                    actions={[<a href='#'>Les mer</a>]}>
+                                    actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
                                     <p className="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                                 </Card>
                             </Col>
                             <Col l={4} m={4} s={12} className="animated fadeIn">
                                 <Card className='large'
                                     header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
-                                    actions={[<a href='#'>Les mer</a>]}>
+                                    actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
                                     I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
                                 </Card>
                             </Col>
                             <Col l={4} m={4} s={12} className="animated fadeIn">
                                 <Card className='large'
                                     header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
-                                    actions={[<a href='#'>Les mer</a>]}>
+                                    actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
                                     I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
                                 </Card>
                             </Col>
@@ -60,7 +60,6 @@ class Recent extends Component {
                 </section>
             )
         });
-
         return cardData;
     }
 }
