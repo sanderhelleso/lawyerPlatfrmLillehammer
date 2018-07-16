@@ -34,13 +34,17 @@ nav {
     background-color: #212121 !important;
 }
 
-#nav-mobile a i {
+#nav-mobile a {
     color: white !important;
-    opacity: 0.9 !important;
+    opacity: 0.2 !important;
+    font-weight: 100 !important;
+    letter-spacing: 2px;
 }
 
 nav ul li a {
     opacity: 0.2 !important;
+    font-weight: 100 !important;
+    letter-spacing: 2px;
 }
 
 .button-collapse {
@@ -163,6 +167,10 @@ recentArticleHeader .card-image img {
 #recentCont {
     margin-bottom: 10%;
     margin-top: 10%;
+}
+
+#recentCont .card .card-image .card-title {
+    font-size: 22px !important;
 }
 
 .tabs {
@@ -307,9 +315,20 @@ footer a img {
     transition: all 0.3s;
 }
 
+@media only screen and (max-width: 1100px) {
+    #recentCont .card .card-image .card-title {
+        font-size: 16px !important;
+    }
+    
+}
+
 @media only screen and (max-width: 1000px) {
     footer #footerIntro {
         max-width: 60%;
+    }
+
+    #recentCont .card .card-image .card-title {
+        font-size: 30px !important;
     }
 }
 

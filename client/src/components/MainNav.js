@@ -27,11 +27,11 @@ class MainNav extends Component {
 
     render() {
         return (
-            <Navbar id="nav" brand='JUSSBLOGGEN' right fixed className="animated slideInDown" >
-                <NavItem href='get-started.html'><Icon>search</Icon></NavItem>
-                <NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>
-                <NavItem href='get-started.html'><Icon>refresh</Icon></NavItem>
-                <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
+            <Navbar id="nav" brand='JUSSBLOGGEN' href="/" right fixed className="animated slideInDown" >
+                <NavItem href='/sistenytt'>Siste Nytt</NavItem>
+                <NavItem href='/arkiv'>Arkivet</NavItem>
+                <NavItem href='components.html'>Om Oss</NavItem>
+                <NavItem href='components.html'>Kontakt</NavItem>
             </Navbar>
         )
     }

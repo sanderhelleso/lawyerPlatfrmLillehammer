@@ -39,21 +39,21 @@ class Recent extends Component {
                             </div>
                             <div id="recentCont" className="container">
                                 <Row>
-                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                    <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
                                             header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
                                             actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
                                         <p>{trunkate(article.body)}</p>
                                         </Card>
                                     </Col>
-                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                    <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
                                             header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
                                             actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
                                             <p>{trunkate(questions.body)}</p>
                                         </Card>
                                     </Col>
-                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                    <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
                                             header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
                                             actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
