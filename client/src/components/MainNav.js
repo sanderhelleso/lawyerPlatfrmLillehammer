@@ -5,6 +5,8 @@ class MainNav extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        document.querySelector(".nav-wrapper").childNodes[0].classList.add("container");
+        document.querySelector(".nav-wrapper").childNodes[0].style.width = "90%";
     }
     
     componentWillUnmount() {
@@ -25,7 +27,7 @@ class MainNav extends Component {
 
     render() {
         return (
-            <Navbar id="nav" brand='logo' right fixed className="animated fadeInDown" >
+            <Navbar id="nav" brand='JUSSBLOGGEN' right fixed className="animated slideInDown" >
                 <NavItem href='get-started.html'><Icon>search</Icon></NavItem>
                 <NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>
                 <NavItem href='get-started.html'><Icon>refresh</Icon></NavItem>
@@ -33,10 +35,6 @@ class MainNav extends Component {
             </Navbar>
         )
     }
-}
-
-function displayNav() {
-    console.log(123);
 }
 
 export default MainNav;

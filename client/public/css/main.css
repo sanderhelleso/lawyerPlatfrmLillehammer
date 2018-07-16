@@ -20,11 +20,32 @@ body {
 }
 
 .brand-logo {
-    margin-left: 30px;
+    font-family: 'Cinzel', serif;
+    color: #C5B358 !important;
+    letter-spacing: 5px;
 }
 
-nav ul {
-    margin-right: 10px;
+nav {
+    background-color: #212121 !important;
+}
+
+#nav-mobile {
+    height: 100vh !important;
+    background-color: #212121 !important;
+}
+
+#nav-mobile a i {
+    color: white !important;
+    opacity: 0.9 !important;
+}
+
+nav ul li a {
+    opacity: 0.2 !important;
+}
+
+.button-collapse {
+    float: right !important;
+    opacity: 0.2;
 }
 
 .genreOverlay, .card-image {
@@ -319,5 +340,9 @@ footer a img {
 @media only screen and (max-width: 400px) {
     #share div {
         margin-bottom: 20px;
+    }
+
+    .brand-logo {
+        font-size: 18px !important;
     }
 }
