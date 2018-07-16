@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col, Card, CardTitle, Parallax } from "react-materialize";
 import { MONTHS } from "../globals/months";
 
-class Recent extends Component {
+class Categories extends Component {
     state = {
         article: [],
         questions: [],
@@ -10,7 +10,9 @@ class Recent extends Component {
     };
 
     async loadData() {
-        const res = await fetch("/api/sistenytt/all");
+        const url = window.location.href.split("/");
+        const apiPath = buildPath(url);
+        const res = await fetch(`/api${apiPath}/all`);
         const json = await res.json();
         this.setState({
             article: json[0],
@@ -41,23 +43,23 @@ class Recent extends Component {
                                 <Row>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
+                                            header={<a href="/sistenytt/manedenssak"> <CardTitle image='/img/manedenssak.jpg' waves="light">Høyesteretten</CardTitle> </a>}
                                             actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
-                                        <p>{trunkate(article.body)}</p>
+                                        <p className="cardIntro">{trunkate(article.intro)}</p>
                                         </Card>
                                     </Col>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
+                                            header={<a href="/sistenytt/femkjappe"> <CardTitle image='/img/femkjappe.jpg' waves="light">Fem kjappe</CardTitle> </a>}
                                             actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
-                                            <p>{trunkate(questions.body)}</p>
+                                            <p className="cardIntro">{trunkate(questions.intro)}</p>
                                         </Card>
                                     </Col>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
+                                            header={<a href="/sistenytt/studenttips"> <CardTitle image='/img/studenttips.jpg' waves="light">Studenttips</CardTitle> </a>}
                                             actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
-                                            <p>{trunkate(tips.body)}</p>
+                                            <p className="cardIntro">{trunkate(tips.intro)}</p>
                                         </Card>
                                     </Col>
                                 </Row>
@@ -77,4 +79,15 @@ function trunkate(text) {
     return `${text.substring(0, 150)}...`;
 }
 
-export default Recent;
+function buildPath(url) {
+    let apiPath = "";
+    for (let i = 3; i < url.length; i++) {
+        apiPath += `/${url[i]}`;
+    }
+
+    console.log(apiPath);
+    // return api path
+    return apiPath;
+}
+
+export default Categories;

@@ -58,7 +58,6 @@ function buildPath(url) {
         apiPath += `/${url[i]}`;
     }
 
-    console.log(apiPath);
     // return api path
     return apiPath;
 }

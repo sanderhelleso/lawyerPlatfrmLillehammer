@@ -13,7 +13,6 @@ module.exports = app => {
 
     app.get("/api/arkiv/*/*/*", (req, res) => {
         const url = req.path.split("/");
-        console.log(url);
         const year = url[3];
         const month = MONTHS.indexOf(url[4]);
         const category = url[5];
@@ -37,5 +36,25 @@ module.exports = app => {
                 });
             break;
         }
+    });
+
+    app.get("/api/all/arkiv/*/*/*/", (req, res) => {
+        const url = req.path.split("/");
+        const year = url[3];
+        const month = MONTHS.indexOf(url[4]);
+        const category = url[5];
+        let json = [];
+        console.log(123);
+
+        Article.find({ "year": year, "month": month }, (err, article) => {
+            json.push(data);
+            Question.find({ "year": year, "month": month }, (err, article) => {
+                json.push(data);
+                Tip.find({ "year": year, "month": month }, (err, article) => {
+                    json.push(data);
+                    res.send(json);
+                });
+            });
+        })
     });
 }

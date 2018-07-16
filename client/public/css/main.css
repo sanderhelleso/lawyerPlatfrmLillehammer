@@ -39,12 +39,14 @@ nav {
     opacity: 0.2 !important;
     font-weight: 100 !important;
     letter-spacing: 2px;
+    font-family: 'Cinzel', serif;
 }
 
 nav ul li a {
     opacity: 0.2 !important;
     font-weight: 100 !important;
     letter-spacing: 2px;
+    font-family: 'Cinzel', serif;
 }
 
 .button-collapse {
@@ -106,6 +108,13 @@ recentArticleHeader .card-image img {
     margin-top: 20px !important;
     margin-bottom: 20px !important;
     word-break: break-all;
+    color: #424242;
+    opacity: 0.9;
+}
+
+#recentCont .cardIntro {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .card-content p a, .card-action a {

@@ -28,7 +28,7 @@ class Article extends Component {
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col key={data.article_id} l={4} m={6} s={12} className="animated fadeIn">
-                    <Card className="cardHeader z-depth-2 medium" header={<a href={`/arkiv/${year}/${monthName.toLowerCase()}`}><CardTitle id="archiveCard" reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
+                    <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${year}/${monthName.toLowerCase()}`}><CardTitle id="archiveCard" reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
                         title={`JUSSPOST #${data.article_id}`}
                         reveal={
                             <div>
