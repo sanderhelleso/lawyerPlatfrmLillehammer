@@ -30,7 +30,7 @@ class Recent extends Component {
                     return (
                         <section key="sistenytt">
                             <div className="genreOverlay">
-                                <Parallax id="landingCover" imageSrc={`/img/img${article.month}.jpg`} />
+                                <Parallax id="landingCover" imageSrc={`/img/img${article.month + 1}.jpg`} />
                             </div>
                             <div id="headingCont">
                                 <h1 id="heading">Sistenytt fra <br /> Jussbloggen</h1>

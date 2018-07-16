@@ -6,6 +6,7 @@ const questionSchema = new Schema({
     year: Number,
     month: Number,
     title: String,
+    intro: String,
     body: String
 });
 

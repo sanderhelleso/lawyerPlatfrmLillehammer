@@ -29,7 +29,7 @@ class Layout extends Component {
             return (
                 <section key={data.title}>
                     <div className="genreOverlay">
-                        <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`} />
+                        <Parallax id="landingCover" imageSrc={`/img/img${data.month + 1}.jpg`} />
                     </div>
                     <div id="headingCont">
                         <h1 id="heading">{this.state.section[0]}</h1>

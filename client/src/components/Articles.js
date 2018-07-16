@@ -12,8 +12,8 @@ class Articles extends Component {
                         <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
                         <RecentArticle />
                     </Tab>
-                    <Tab title="Arkiv" className="animated fadeIn">
-                        <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
+                    <Tab title="Arkivet" className="animated fadeIn">
+                        <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkivet</h3>
                         <Row>
                             <Col l={10} m={9} s={2}/>
                             <Input id="archiveSelect" l={2} m={3} s={8} type='select' label="År" defaultValue='1'>
