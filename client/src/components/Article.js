@@ -9,7 +9,6 @@ class Article extends Component {
     };
 
     async loadData() {
-        console.log(123);
         const res = await fetch("/api/arkiv");
         const json = await res.json();
         this.setState({

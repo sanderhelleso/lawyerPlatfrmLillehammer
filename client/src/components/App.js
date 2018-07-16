@@ -5,6 +5,7 @@ import { BrowserRouter, Route} from "react-router-dom";
 import Landing from "../components/Landing";
 import MainFooter from "../components/MainFooter";
 import Layout from "./Layout";
+import Recent from "./Recent";
 
 class App extends Component {
     render() {
@@ -12,7 +13,8 @@ class App extends Component {
         <div>
             <BrowserRouter>
                 <div>
-                    <Route exact path="/" component={Landing} /> 
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/sistenytt" component={Recent} /> 
                     <Route exact path="/sistenytt/*" component={Layout} />
                     <Route exact path="/arkiv/*/*/*" component={Layout} />  
                     <Route path="/" component={MainFooter} /> 

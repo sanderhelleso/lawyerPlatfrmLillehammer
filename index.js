@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 const connectWithRetry = () => {
     return mongoose.connect(process.env.MONGO_URI, err => {
         if (err) {
-            console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+            console.error('Failed to connect to mongo on startup - retrying in 5 sec');
             setTimeout(connectWithRetry, 5000);
         }
     });
