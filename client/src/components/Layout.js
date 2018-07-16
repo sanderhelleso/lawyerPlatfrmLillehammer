@@ -29,14 +29,14 @@ class Layout extends Component {
             return (
                 <section key={data.title}>
                     <div className="genreOverlay">
-                        <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`}/>
+                        <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`} />
                     </div>
                     <div id="headingCont">
                         <h1 id="heading">{this.state.section[0]}</h1>
                         <h5 id="headingMonth">{MONTHS[data.month]}</h5>
                         <h2 id="headingYear">{data.year}</h2>
                     </div>
-                    <div className="container">
+                    <div className="container" className="animated fadeIn">
                         <h3 id="layoutTitle" className="center-align">{data.title}</h3>
                         <hr />
                         <p id="layoutBody" className="container">{data.body}</p>

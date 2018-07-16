@@ -63,6 +63,10 @@ recentArticleHeader .card-image img {
     margin-bottom: 20px !important;
 }
 
+.card-content p a {
+    color: #C5B358 !important;
+}
+
 #headingCont {
     position: absolute;
     z-index: 1337;
@@ -129,6 +133,7 @@ recentArticleHeader .card-image img {
 .collection-item {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
+    color: #C5B358 !important;
 }
 
 #layoutTitle {
@@ -247,7 +252,7 @@ footer ul li a {
 
 footer a img {
     position: relative;
-    margin-bottom: -3px !important;
+    margin-bottom: -4px !important;
     max-height: 20px;
     width: 20px;
     margin-right: 1px;
