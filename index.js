@@ -18,7 +18,12 @@ const connectWithRetry = () => {
     return mongoose.connect(process.env.MONGO_URI, err => {
         if (err) {
             console.error('Failed to connect to mongo on startup - retrying in 5 sec');
+            throw err;
             setTimeout(connectWithRetry, 5000);
+        }
+
+        else {
+            console.log("connected to DB!");
         }
     });
 };

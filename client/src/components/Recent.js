@@ -32,24 +32,24 @@ class Recent extends Component {
                         <h5 id="headingMonth">{MONTHS[data.month]}</h5>
                         <h2 id="headingYear">{data.year}</h2>
                     </div>
-                    <div className="container">
+                    <div id="recentCont" className="container">
                          <Row>
                             <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='small'
+                                <Card className='large'
                                     header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
                                     actions={[<a href='#'>Les mer</a>]}>
-                                    I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+                                    <p className="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                                 </Card>
                             </Col>
                             <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='small'
+                                <Card className='large'
                                     header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
                                     actions={[<a href='#'>Les mer</a>]}>
                                     I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
                                 </Card>
                             </Col>
                             <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='small'
+                                <Card className='large'
                                     header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
                                     actions={[<a href='#'>Les mer</a>]}>
                                     I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
