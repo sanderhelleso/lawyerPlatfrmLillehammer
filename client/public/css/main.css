@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Lato|Crimson+Text|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Crimson+Text|Open+Sans');
 
 .noSelect {
     -webkit-touch-callout: none;
@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #fafafa;
 }
 
@@ -39,7 +39,7 @@ body {
     height: 100%;
     width: 100%;
     background: linear-gradient(
-    rgba(20, 20, 20, 0.1), 
+    rgba(250, 221, 91, 0.452), 
     rgba(20, 20, 20, 9));
 }
 
@@ -55,7 +55,13 @@ recentArticleHeader .card-image img {
 
 .card-title {
     z-index: 1337;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-family: 'Crimson Text', serif;
+}
+
+.card-image .card-title {
+    font-size: 32px !important;
+    font-family: 'Cinzel', serif;
 }
 
 .cardIntro {
@@ -63,8 +69,14 @@ recentArticleHeader .card-image img {
     margin-bottom: 20px !important;
 }
 
-.card-content p a {
+.card-content p a, .card-action a {
     color: #C5B358 !important;
+    font-size: 16px;
+    transition: all 0.3s !important;
+}
+
+.card-content p a:hover, .card-action a:hover {
+    opacity: 0.5;
 }
 
 #headingCont {

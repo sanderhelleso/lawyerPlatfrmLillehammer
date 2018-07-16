@@ -8,11 +8,11 @@ class Articles extends Component {
         return (
             <div className="section container">
                 <Tabs className='tabs'>
-                    <Tab title="Siste nytt" className="animated fadeIn">
+                    <Tab title="Siste nytt" className="animated fadeIn" active>
                         <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
                         <RecentArticle />
                     </Tab>
-                    <Tab title="Arkiv" className="animated fadeIn" active>
+                    <Tab title="Arkiv" className="animated fadeIn">
                         <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkiv</h3>
                         <Row>
                             <Col l={10} m={9} s={2}/>
