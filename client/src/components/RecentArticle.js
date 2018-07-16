@@ -22,7 +22,6 @@ class RecentArticle extends Component {
 
     render() {
         const cardData = this.state.data.map((data) => {
-            console.log(this.state);
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
@@ -30,7 +29,7 @@ class RecentArticle extends Component {
                         title={`JUSSPOST #${data.article_id}`}
                         reveal={
                             <div>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                <p className="cardIntro">{data.intro}</p>
                                 <Collection>
                                     <CollectionItem href="/sistenytt/manedenssak"><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
                                     <CollectionItem href="/sistenytt/femkjappe"><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
@@ -38,6 +37,7 @@ class RecentArticle extends Component {
                                 </Collection>
                             </div>
                         }>
+                        <p className="cardIntro">{data.intro}</p>
                         <p><a href="/sistenytt">Les mer</a></p>
                     </Card>
                 </Col>

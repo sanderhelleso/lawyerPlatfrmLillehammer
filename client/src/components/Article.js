@@ -28,11 +28,11 @@ class Article extends Component {
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col key={data.article_id} l={4} m={6} s={12} className="animated fadeIn">
-                    <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${year}/${monthName.toLowerCase()}`}><CardTitle id="archiveCard" reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
+                    <Card className="cardHeader z-depth-2 medium" header={<a href={`/arkiv/${year}/${monthName.toLowerCase()}`}><CardTitle id="archiveCard" reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
                         title={`JUSSPOST #${data.article_id}`}
                         reveal={
                             <div>
-                                <p className="cardIntro">Here is some more information about this product that is only revealed once clicked on.</p>
+                                <p className="cardIntro">{data.intro}</p>
                                 <Collection>
                                     <CollectionItem href={`/arkiv/${year}/${monthName.toLowerCase()}/manedenssak`}><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
                                     <CollectionItem href={`/arkiv/${year}/${monthName.toLowerCase()}/femkjappe`}><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
@@ -40,7 +40,7 @@ class Article extends Component {
                                 </Collection>
                             </div>
                         }>
-                        <p className="cardIntro"> Here is some more information about this product that is only revealed once clicked on.</p>
+                        <p className="cardIntro">{data.intro}</p>
                         <p><a className="teal-text font-weight-bold" href={`/arkiv/${year}/${monthName.toLowerCase()}`}>Les mer</a></p>
                     </Card>
                 </Col>
