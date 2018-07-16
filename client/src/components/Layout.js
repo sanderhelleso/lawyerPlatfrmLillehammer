@@ -38,7 +38,7 @@ class Layout extends Component {
                     </div>
                     <div className="container" className="animated fadeIn">
                         <h3 id="layoutTitle" className="center-align">{data.title}</h3>
-                        <hr />
+                        <hr  />
                         <p id="layoutBody" className="container">{data.body}</p>
                         <hr id="shareHr" />
                         <h5 id="shareHeading" className="center-align">{this.state.section[1]}</h5>

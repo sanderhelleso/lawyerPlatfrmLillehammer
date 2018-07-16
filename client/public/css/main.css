@@ -211,7 +211,9 @@ hr {
     border: 0;
     border-top: 1px solid #eeeeee;
     margin: 1em 0;
-    padding: 0; 
+    padding: 0;
+    width: 75%;
+    margin: 0 auto;
     margin-bottom: 5%;
     margin-top: 5%;
 }
@@ -362,7 +364,15 @@ footer a img {
         margin-bottom: 20px;
     }
 
+    #layoutBody {
+        font-size: 14.5px;
+    }
+
     .brand-logo {
         font-size: 18px !important;
+    }
+
+    #shareHeading {
+        font-size: 18px;
     }
 }
