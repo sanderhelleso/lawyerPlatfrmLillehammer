@@ -119,10 +119,6 @@ recentArticleHeader .card-image img {
     margin-top: 10%;
 }
 
-#recentCont .card {
-    max-height: 400px;
-}
-
 .tabs {
     overflow-x: hidden;
     background-color: #fafafa !important;

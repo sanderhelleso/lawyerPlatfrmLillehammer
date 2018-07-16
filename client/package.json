@@ -6,6 +6,9 @@
     "/api/sistenytt": {
       "target": "http://localhost:5000"
     },
+    "/api/sistenytt/all": {
+      "target": "http://localhost:5000"
+    },
     "/api/arkiv": {
       "target": "http://localhost:5000"
     },

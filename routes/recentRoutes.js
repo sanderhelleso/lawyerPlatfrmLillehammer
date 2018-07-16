@@ -10,6 +10,20 @@ module.exports = app => {
         });
     });
 
+    app.get("/api/sistenytt/all", (req, res) => {
+        let json = [];
+        Article.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+            json.push(data);
+            Question.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+                json.push(data);
+                Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+                    json.push(data);
+                    res.send(json);
+                });
+            });
+        }) 
+    });
+
     app.get("/api/sistenytt/manedenssak", (req, res) => {
         Article.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);

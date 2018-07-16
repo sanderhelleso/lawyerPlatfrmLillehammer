@@ -4,15 +4,18 @@ import { MONTHS } from "../globals/months";
 
 class Recent extends Component {
     state = {
-        data: []
+        article: [],
+        questions: [],
+        tips: []
     };
 
     async loadData() {
-        console.log(123);
-        const res = await fetch("/api/sistenytt");
+        const res = await fetch("/api/sistenytt/all");
         const json = await res.json();
         this.setState({
-            data: json
+            article: json[0],
+            questions: json[1],
+            tips: json[2]
         })
     }
 
@@ -21,47 +24,57 @@ class Recent extends Component {
     }
 
     render() {
-        const cardData = this.state.data.map((data) => {
-            return (
-                <section key="sistenytt">
-                    <div className="genreOverlay">
-                        <Parallax id="landingCover" imageSrc={`/img/img${data.month}.jpg`} />
-                    </div>
-                    <div id="headingCont">
-                        <h1 id="heading">Sistenytt fra <br /> Jussbloggen</h1>
-                        <h5 id="headingMonth">{MONTHS[data.month]}</h5>
-                        <h2 id="headingYear">{data.year}</h2>
-                    </div>
-                    <div id="recentCont" className="container">
-                         <Row>
-                            <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='large'
-                                    header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
-                                    actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
-                                    <p className="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                                </Card>
-                            </Col>
-                            <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='large'
-                                    header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
-                                    actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
-                                    I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
-                                </Card>
-                            </Col>
-                            <Col l={4} m={4} s={12} className="animated fadeIn">
-                                <Card className='large'
-                                    header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
-                                    actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
-                                    I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
-                                </Card>
-                            </Col>
-                        </Row>
-                    </div>
-                </section>
-            )
+        const cardData = this.state.article.map((article) => {
+            const question = this.state.questions.map((questions) => {
+                const tip = this.state.tips.map((tips) => {
+                    return (
+                        <section key="sistenytt">
+                            <div className="genreOverlay">
+                                <Parallax id="landingCover" imageSrc={`/img/img${article.month}.jpg`} />
+                            </div>
+                            <div id="headingCont">
+                                <h1 id="heading">Sistenytt fra <br /> Jussbloggen</h1>
+                                <h5 id="headingMonth">{MONTHS[article.month]}</h5>
+                                <h2 id="headingYear">{article.year}</h2>
+                            </div>
+                            <div id="recentCont" className="container">
+                                <Row>
+                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                        <Card className='medium'
+                                            header={<CardTitle image='/img/manedenssak.jpg'>Høyesteretten</CardTitle>}
+                                            actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
+                                        <p>{trunkate(article.body)}</p>
+                                        </Card>
+                                    </Col>
+                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                        <Card className='medium'
+                                            header={<CardTitle image='/img/femkjappe.jpg'>Fem kjappe</CardTitle>}
+                                            actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
+                                            <p>{trunkate(questions.body)}</p>
+                                        </Card>
+                                    </Col>
+                                    <Col l={4} m={4} s={12} className="animated fadeIn">
+                                        <Card className='medium'
+                                            header={<CardTitle image='/img/studenttips.jpg'>Studenttips</CardTitle>}
+                                            actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
+                                            <p>{trunkate(tips.body)}</p>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </section>
+                    )
+                });
+                return tip;
+            })
+            return question;
         });
         return cardData;
     }
+}
+
+function trunkate(text) {
+    return `${text.substring(0, 150)}...`;
 }
 
 export default Recent;
