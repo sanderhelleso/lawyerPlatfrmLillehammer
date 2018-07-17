@@ -16,7 +16,6 @@ body {
 
 .navbar-fixed {
     z-index: 10000;
-    display: none;
 }
 
 .brand-logo {
@@ -26,7 +25,7 @@ body {
 }
 
 nav {
-    background-color: #212121 !important;
+    background-color: #212121;
 }
 
 #nav-mobile {
@@ -130,7 +129,7 @@ recentArticleHeader .card-image img {
 #headingCont {
     position: absolute;
     z-index: 1337;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Cinzel', serif;

@@ -8,26 +8,10 @@ class MainNav extends Component {
         document.querySelector(".nav-wrapper").childNodes[0].classList.add("container");
         document.querySelector(".nav-wrapper").childNodes[0].style.width = "90%";
     }
-    
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll(event) {
-        const target = document.querySelector(".parallax-container");
-        const nav = document.querySelector(".navbar-fixed");
-        if (window.scrollY > (target.offsetTop + target.offsetHeight)) {
-            nav.style.display = "block";
-        }
-
-        else {
-            nav.style.display = "none";
-        }
-    }
 
     render() {
         return (
-            <Navbar id="nav" brand='JUSSBLOGGEN' href="/" right fixed className="animated slideInDown" >
+            <Navbar id="nav" brand='JUSSBLOGGEN' href="/" right fixed >
                 <NavItem href='/sistenytt'>Siste Nytt</NavItem>
                 <NavItem href='/arkiv'>Arkivet</NavItem>
                 <NavItem href='components.html'>Om Oss</NavItem>
