@@ -24,7 +24,7 @@
     "/api/arkiv/*/*/*": {
       "target": "http://localhost:5000"
     },
-    "/api/arkiv/*/*/*/all": {
+    "/api/arkiv/*/*/all": {
       "target": "http://localhost:5000"
     }
   },

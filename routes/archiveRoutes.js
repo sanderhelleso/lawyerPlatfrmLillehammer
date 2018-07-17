@@ -11,50 +11,49 @@ module.exports = app => {
         });
     });
 
+    // direct to category
     app.get("/api/arkiv/*/*/*", (req, res) => {
         const url = req.path.split("/");
         const year = url[3];
         const month = MONTHS.indexOf(url[4]);
         const category = url[5];
 
-        switch (category) {
-            case "manedenssak":
-                Article.find({ "year": year, "month": month }, (err, article) => {
-                    res.send(article);
-                });
-            break;
-            
-            case "femkjappe":
-                Question.find({ "year": year, "month": month }, (err, article) => {
-                    res.send(article);
-                });
-            break;
-            
-            case "studenttips":
-                Tip.find({ "year": year, "month": month }, (err, article) => {
-                    res.send(article);
-                });
-            break;
+        if (category != "all") {
+            switch (category) {
+                case "manedenssak":
+                    Article.find({ "year": year, "month": month }, (err, article) => {
+                        res.send(article);
+                    });
+                break;
+                
+                case "femkjappe":
+                    Question.find({ "year": year, "month": month }, (err, question) => {
+                        res.send(question);
+                    });
+                break;
+                
+                case "studenttips":
+                    Tip.find({ "year": year, "month": month }, (err, tip) => {
+                        res.send(tip);
+                    });
+                break;
+            }
         }
-    });
 
-    app.get("/api/all/arkiv/*/*/*/", (req, res) => {
-        const url = req.path.split("/");
-        const year = url[3];
-        const month = MONTHS.indexOf(url[4]);
-        const category = url[5];
-        let json = [];
-        console.log(123);
-
-        Article.find({ "year": year, "month": month }, (err, article) => {
-            json.push(data);
-            Question.find({ "year": year, "month": month }, (err, article) => {
-                json.push(data);
-                Tip.find({ "year": year, "month": month }, (err, article) => {
-                    json.push(data);
-                    res.send(json);
+        // see all categories
+        else {
+            let json = [];
+            console.log(year, month);
+            Article.find({ "year": year, "month": month }, (err, article) => {
+                json.push(article);
+                Question.find({ "year": year, "month": month }, (err, question) => {
+                    json.push(question);
+                    Tip.find({ "year": year, "month": month }, (err, tip) => {
+                        json.push(tip);
+                        res.send(json);
+                    });
                 });
-            });
-        })
+            })
+        }
     });
 }

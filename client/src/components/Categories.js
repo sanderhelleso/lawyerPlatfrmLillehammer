@@ -14,11 +14,12 @@ class Categories extends Component {
         const apiPath = buildPath(url);
         const res = await fetch(`/api${apiPath}/all`);
         const json = await res.json();
+
         this.setState({
             article: json[0],
             questions: json[1],
             tips: json[2]
-        })
+        });
     }
 
     componentWillMount() {
@@ -26,6 +27,7 @@ class Categories extends Component {
     }
 
     render() {
+        console.log(this.state.article, this.state.questions, this.state.tips);
         const cardData = this.state.article.map((article) => {
             const question = this.state.questions.map((questions) => {
                 const tip = this.state.tips.map((tips) => {
