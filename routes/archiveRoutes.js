@@ -43,7 +43,6 @@ module.exports = app => {
         // see all categories
         else {
             let json = [];
-            console.log(year, month);
             Article.find({ "year": year, "month": month }, (err, article) => {
                 json.push(article);
                 Question.find({ "year": year, "month": month }, (err, question) => {

@@ -27,7 +27,6 @@ class Categories extends Component {
     }
 
     render() {
-        console.log(this.state.article, this.state.questions, this.state.tips);
         const cardData = this.state.article.map((article) => {
             const question = this.state.questions.map((questions) => {
                 const tip = this.state.tips.map((tips) => {
@@ -45,22 +44,22 @@ class Categories extends Component {
                                 <Row>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<a href="/sistenytt/manedenssak"> <CardTitle image='/img/manedenssak.jpg' waves="light">Høyesteretten</CardTitle> </a>}
-                                            actions={[<a href='/sistenytt/manedenssak'>Les mer</a>]}>
+                                            header={<a href={`${window.location.href}/manedenssak`}> <CardTitle image='/img/manedenssak.jpg' waves="light">Høyesteretten</CardTitle> </a>}
+                                            actions={[<a href={`${window.location.href}/manedenssak`}>Les mer</a>]}>
                                         <p className="cardIntro">{trunkate(article.intro)}</p>
                                         </Card>
                                     </Col>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<a href="/sistenytt/femkjappe"> <CardTitle image='/img/femkjappe.jpg' waves="light">Fem kjappe</CardTitle> </a>}
-                                            actions={[<a href='/sistenytt/femkjappe'>Les mer</a>]}>
+                                            header={<a href={`${window.location.href}/femkjappe`}> <CardTitle image='/img/femkjappe.jpg' waves="light">Fem kjappe</CardTitle> </a>}
+                                            actions={[<a href={`${window.location.href}/femkjappe`}>Les mer</a>]}>
                                             <p className="cardIntro">{trunkate(questions.intro)}</p>
                                         </Card>
                                     </Col>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<a href="/sistenytt/studenttips"> <CardTitle image='/img/studenttips.jpg' waves="light">Studenttips</CardTitle> </a>}
-                                            actions={[<a href='/sistenytt/studenttips'>Les mer</a>]}>
+                                            header={<a href={`${window.location.href}/studenttips`}> <CardTitle image='/img/studenttips.jpg' waves="light">Studenttips</CardTitle> </a>}
+                                            actions={[<a href={`${window.location.href}/studenttips`}>Les mer</a>]}>
                                             <p className="cardIntro">{trunkate(tips.intro)}</p>
                                         </Card>
                                     </Col>
