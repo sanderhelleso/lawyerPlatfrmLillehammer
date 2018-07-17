@@ -86,6 +86,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
 
+// serve ut production assets
+if (process.env.NODE_ENV === "production") {
+    // serve out static files
+    app.use(express.static("client/build"));
+
+    // if it dosent recognize the route
+    const path = require("path");
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
+
 // start server
 server.listen(port, host);
 console.log(`Magic is happening on ${port}`);
