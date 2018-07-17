@@ -36,7 +36,7 @@ const Tip = mongoose.model("tips");
 
 /*for (let i = 0; i < 12; i++) {
     const article = new Article({
-        year: new Date().getFullYear(),
+        year: new Date().getFullYear() + 2,
         month: i,
         title: "Månedens sak i høyesteretten",
         intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",
@@ -47,7 +47,7 @@ const Tip = mongoose.model("tips");
     });
 
     const question = new Question({
-        year: new Date().getFullYear(),
+        year: new Date().getFullYear() + 2,
         month: i,
         title: "5 kjappe med El Nino",
         intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",
@@ -58,7 +58,7 @@ const Tip = mongoose.model("tips");
     });
 
     const tip = new Tip({
-        year: new Date().getFullYear(),
+        year: new Date().getFullYear() + 2,
         month: i,
         title: "Månedens studentips",
         intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",

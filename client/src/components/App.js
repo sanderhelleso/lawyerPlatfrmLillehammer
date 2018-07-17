@@ -30,7 +30,6 @@ class App extends Component {
 }
 
 function setRoute() {
-    console.log(window.location.href.split("/").length)
     if (window.location.href.split("/").length == 7) {
         return Layout;
     }
