@@ -41,8 +41,10 @@ class Layout extends Component {
                         <hr  />
                         <p id="layoutBody" className="container">{data.body}</p>
                         <hr id="shareHr" />
-                        <h5 id="shareHeading" className="center-align">{this.state.section[1]}</h5>
-                        <p id="shareSubTxt" className="center-align">Del på sosiale medier</p>
+                        <div className="container">
+                            <h5 id="shareHeading" className="center-align">{this.state.section[1]}</h5>
+                            <p id="shareSubTxt" className="center-align">Del på sosiale medier</p>
+                        </div>
                         <Share />
                     </div>
                 </section>

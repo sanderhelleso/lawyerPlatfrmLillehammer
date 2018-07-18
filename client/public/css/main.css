@@ -220,7 +220,7 @@ recentArticleHeader .card-image img {
 }
 
 #layoutTitle {
-    margin-top: 10%;
+    margin-top: 5%;
     letter-spacing: 5px;
     font-family: 'Crimson Text', serif;
 }
@@ -274,7 +274,7 @@ hr {
 }
 
 footer {
-    margin-top: 5%;
+    margin-top: 2.5%;
     background: #2E2E2E !important;
 }
 
@@ -390,6 +390,10 @@ footer a img {
 }
 
 @media only screen and (max-width: 400px) {
+    #headingCont {
+        top: 50%;
+    }
+
     #share div {
         margin-bottom: 20px;
     }
