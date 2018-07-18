@@ -90,6 +90,12 @@ nav ul li a {
     rgba(20, 20, 20, 9));
 }
 
+#sidenav-overlay {
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.6), 
+    rgba(250, 211, 91, 0.6)) !important;
+}
+
 #archiveCard img {
     min-height: 200px;
     max-height: 200px; 
