@@ -89,6 +89,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
 
+//use sessions for tracking logins
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: false
+}));
+
 // serve ut production assets
 if (process.env.NODE_ENV === "production") {
     // serve out static files
