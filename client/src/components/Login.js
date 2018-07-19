@@ -20,7 +20,21 @@ class Login extends Component {
 }
 
 function login() {
-    console.log(123);
+    const inputs = document.querySelectorAll("input");
+    console.log(inputs);
+    (async () => {
+        const rawResponse = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({email: inputs[0].value, pass: inputs[1].value})
+        });
+        const content = await rawResponse.json();
+      
+        console.log(content);
+    })();
 }
 
 export default Login;

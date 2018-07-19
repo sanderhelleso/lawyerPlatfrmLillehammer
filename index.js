@@ -88,6 +88,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
+require("./routes/loginRoute")(app);
 
 //use sessions for tracking logins
 app.use(session({
