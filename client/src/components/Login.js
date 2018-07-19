@@ -44,6 +44,7 @@ function login() {
         .then(res => {
             console.log(token);
             window.sessionStorage.adminAuth = token;
+            window.location.replace("/dashboard");
         })
     );
 }

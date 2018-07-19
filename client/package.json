@@ -32,9 +32,6 @@
     },
     "/api/dashboard": {
       "target": "http://localhost:5000"
-    },
-    "/dashboard": {
-      "target": "http://localhost:5000"
     }
   },
   "dependencies": {
