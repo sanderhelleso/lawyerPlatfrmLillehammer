@@ -34,6 +34,18 @@ module.exports = app => {
         });
     });
 
+    app.get("/api/dashboard", verifyToken, (req, res) => {
+        jwt.verify(req.token, process.env.SESSION_SECRET, (err, authData) => {
+            if (err) {
+                res.sendStatus(403);
+            }
+
+            else {
+                res.send(authData);
+            }
+        });
+    });
+
     function verifyToken(req, res, next) {
         // get auth header value
         const bearerHeader = req.headers["authorization"];
@@ -50,17 +62,4 @@ module.exports = app => {
             res.send(403);
         }
     }
-
-    app.get("/dashboard", verifyToken, (req, res) => {
-        jwt.verify(req.token, process.env.SESSION_SECRET, (err, authData) => {
-            if (err) {
-                res.sendStatus(403);
-            }
-
-            else {
-                res.send(authData);
-            }
-        });
-
-    });
 }

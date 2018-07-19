@@ -30,6 +30,9 @@
     "/api/login": {
       "target": "http://localhost:5000"
     },
+    "/api/dashboard": {
+      "target": "http://localhost:5000"
+    },
     "/dashboard": {
       "target": "http://localhost:5000"
     }

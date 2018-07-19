@@ -8,6 +8,7 @@ import Layout from "./Layout";
 import Categories from "./Categories";
 import MainNav from "./MainNav";
 import Login from "./Login";
+import Dashboard from "./Dashboard";
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
                 <div>
                     <Route path="/" component={MainNav} />
                     <Route exact path="/" component={Landing} />
+                    <Route path="/dashoboard" component={Dashboard} /> 
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/sistenytt" component={Categories} /> 
                     <Route exact path="/sistenytt/*" component={Layout} />

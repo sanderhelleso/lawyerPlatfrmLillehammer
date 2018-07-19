@@ -21,6 +21,7 @@ class Login extends Component {
 
 function login() {
     const inputs = document.querySelectorAll("input");
+    let token;
     console.log(inputs);
     fetch(`/api/login`, {
         method: 'POST',
@@ -32,12 +33,17 @@ function login() {
     })
     .then(res => res.json())
     .then(res => 
-        fetch('/dashboard', { 
+        fetch('/api/dashboard', { 
             method: 'get', 
             headers: new Headers({
               'Authorization': 'Bearer ' + res.token, 
               'Content-Type': 'application/x-www-form-urlencoded'
             }) 
+        })
+        .then(token = res.token)
+        .then(res => {
+            console.log(token);
+            window.sessionStorage.adminAuth = token;
         })
     );
 }
