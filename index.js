@@ -8,6 +8,7 @@ const http = require("http");
 const dotenv = require("dotenv").load();
 const mongoose = require("mongoose");
 const session = require("express-session");
+const MongoStore = require('connect-mongo')(session);
 
 require("./models/Article");
 require("./models/Questions");
@@ -82,6 +83,16 @@ const server = http.createServer(app);
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || 'localhost';
 
+//use sessions for tracking logins
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection
+    })
+}));
+
 // body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -89,13 +100,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
 require("./routes/loginRoute")(app);
-
-//use sessions for tracking logins
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: true,
-    saveUninitialized: false
-}));
 
 // serve ut production assets
 if (process.env.NODE_ENV === "production") {
