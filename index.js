@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 require("./models/Article");
 require("./models/Questions");
 require("./models/Tips");
+require("./models/User");
 
 // db
 mongoose.Promise = global.Promise;

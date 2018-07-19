@@ -25,5 +25,5 @@ const userSchema = new Schema({
       }
 });
 
-userSchema.plugin(AutoIncrement, {inc_field: 'tips_id'});
+userSchema.plugin(AutoIncrement, {inc_field: 'user_id'});
 mongoose.model("user", userSchema);
