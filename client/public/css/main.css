@@ -348,6 +348,16 @@ footer a img {
     transition: all 0.3s;
 }
 
+#loginCont {
+    min-height: 45vh;
+}
+
+#loginCont h3 {
+    margin-top: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
 @media only screen and (max-width: 1100px) {
     #recentCont .card .card-image .card-title {
         font-size: 16px !important;
