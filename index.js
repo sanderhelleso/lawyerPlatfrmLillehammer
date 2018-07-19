@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const http = require("http");
 const dotenv = require("dotenv").load();
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const session = require("express-session");
 
 require("./models/Article");
 require("./models/Questions");
