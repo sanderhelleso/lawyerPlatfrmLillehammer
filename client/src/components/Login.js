@@ -31,7 +31,15 @@ function login() {
         body: JSON.stringify({email: inputs[0].value, pass: inputs[1].value})
     })
     .then(res => res.json())
-    .then(res => window.location.replace("/dashboard"));
+    .then(res => 
+        fetch('/dashboard', { 
+            method: 'get', 
+            headers: new Headers({
+              'Authorization': 'Bearer ' + res.token, 
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }) 
+        })
+    );
 }
 
 export default Login;
