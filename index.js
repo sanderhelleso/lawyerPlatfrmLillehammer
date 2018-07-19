@@ -33,6 +33,7 @@ connectWithRetry();
 const Article = mongoose.model("articles");
 const Question = mongoose.model("questions");
 const Tip = mongoose.model("tips");
+const User = mongoose.model("user");
 
 /*for (let i = 0; i < 12; i++) {
     const article = new Article({

@@ -21,7 +21,6 @@ class Article extends Component {
 
     render() {
         const cardData = this.state.data.map((data) => {
-            const year = document.querySelector("#archiveSelect").value;
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col key={data.article_id} l={4} m={6} s={12} className={`animated fadeIn archiveCard ${data.year}`}>
