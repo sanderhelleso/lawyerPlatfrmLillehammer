@@ -4,6 +4,7 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const articleSchema = new Schema({
     id: Number,
+    monthIntro: String,
     year: Number,
     month: Number,
     title: String,

@@ -26,6 +26,7 @@ class Layout extends Component {
 
     render() {
         const layout = this.state.data.map((data) => {
+            console.log(data);
             return (
                 <section key={data.title}>
                     <div className="genreOverlay">
@@ -39,7 +40,9 @@ class Layout extends Component {
                     <div className="container" className="animated fadeIn">
                         <h3 id="layoutTitle" className="center-align">{data.title}</h3>
                         <hr  />
-                        <p id="layoutBody" className="container">{data.body}</p>
+                        <div id="layoutBody" className="container">
+                            <div id="postBody" dangerouslySetInnerHTML={createMarkup(data.body)}></div>
+                        </div>
                         <hr id="shareHr" />
                         <div className="container">
                             <h5 id="shareHeading" className="center-align">{this.state.section[1]}</h5>
@@ -53,6 +56,10 @@ class Layout extends Component {
         return layout;
     }
 }
+
+function createMarkup(data) {
+    return {__html: data};
+  }
 
 function buildPath(url) {
     let apiPath = "";

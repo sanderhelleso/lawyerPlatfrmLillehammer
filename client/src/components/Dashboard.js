@@ -29,6 +29,10 @@ class Dashboard extends Component {
                     </Row>
                     <Row>
                         <Col l={2} m={3} s={1}/>
+                        <Input id="monthIntro" l={8} m={6} s={10} label="Månedens Introduksjon" type='textarea' />
+                    </Row>
+                    <Row>
+                        <Col l={2} m={3} s={1}/>
                         <Input id="archiveSelect" l={8} m={6} s={10} type='select' label="Kategori" defaultValue={"1"} >
                             <option value='1'>Månedens Sak</option>
                             <option value='2'>Fem Kjappe</option>
@@ -37,11 +41,11 @@ class Dashboard extends Component {
                     </Row>
                     <Row>
                         <Col l={2} m={3} s={1}/>
-                        <Input id="titelInput" l={8} m={6} s={10} label="Titel" type='textarea' />
+                        <Input id="titleInput" l={8} m={6} s={10} label="Title" type='textarea' />
                     </Row>
                     <Row>
                         <Col l={2} m={3} s={1}/>
-                        <Input id="introInput" l={8} m={6} s={10} label="Introduksjon" type='textarea' />
+                        <Input id="introInput" l={8} m={6} s={10} label="Post Spesifikk Introduksjon" type='textarea' />
                     </Row>
                     <Row>
                         <Col l={1} m={2} s={1}/>
@@ -79,10 +83,10 @@ function checkSessionStorage() {
 }
 
 function publishPost() {
-    console.log(123);
+    const postMonthInro = document.querySelector("#monthIntro").value;
     const postType = document.querySelector("#archiveSelect").value;
     const postMonth = document.querySelector("#monthSelect").value;
-    const postTitel = document.querySelector("#titelInput").value;
+    const postTitle = document.querySelector("#titleInput").value;
     const postIntro = document.querySelector("#introInput").value;
     const postBody = document.querySelector("#postBody").value;
 
@@ -93,17 +97,16 @@ function publishPost() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+            monthIntro: postMonthInro,
             year: new Date().getFullYear(),
             month: postMonth,
             category: postType,
-            titel: postTitel,
+            title: postTitle,
             intro: postIntro,
             postBody: postBody
 
         })
     });
-
-    console.log(postType, postMonth, postTitel, postIntro, postBody);
 }
 
 export default Dashboard;
