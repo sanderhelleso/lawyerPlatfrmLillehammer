@@ -12,13 +12,13 @@
     "/api/arkiv": {
       "target": "http://localhost:5000"
     },
-    "/api/sistenytt/studenttips": {
+    "/api/sistenytt/aktuelt": {
       "target": "http://localhost:5000"
     },
-    "/api/sistenytt/femkjappe": {
+    "/api/sistenytt/faglig-artikkel": {
       "target": "http://localhost:5000"
     },
-    "/api/sistenytt/manedenssak": {
+    "/api/sistenytt/litt-av-hvert": {
       "target": "http://localhost:5000"
     },
     "/api/arkiv/*/*/*": {

@@ -24,19 +24,19 @@ module.exports = app => {
         }) 
     });
 
-    app.get("/api/sistenytt/manedenssak", (req, res) => {
+    app.get("/api/sistenytt/faglig-artikkel", (req, res) => {
         Article.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);
         });
     });
 
-    app.get("/api/sistenytt/femkjappe", (req, res) => {
+    app.get("/api/sistenytt/litt-av-hvert", (req, res) => {
         Question.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);
         });
     });
 
-    app.get("/api/sistenytt/studenttips", (req, res) => {
+    app.get("/api/sistenytt/akutelt", (req, res) => {
         Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);
         });

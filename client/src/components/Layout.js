@@ -74,10 +74,10 @@ function buildPath(url) {
 function setTitle(section) {
     const sectionPath = section[section.length - 1];
     if (sectionPath === "manedenssak") {
-        return ["Månedens sak i høyesteretten", "Kjenner du noen som vil finne denne saken interessant?"];
+        return ["Faglig Artikkel", "Kjenner du noen som vil finne denne saken interessant?"];
     }
 
-    return [`Månedens ${sectionPath}`, `Kjenner du noen som kan ha nytte av månedens ${sectionPath}?`];
+    return [`${sectionPath}`, `Kjenner du noen som kan ha nytte av månedens ${sectionPath}?`];
 }
 
 export default Layout;
