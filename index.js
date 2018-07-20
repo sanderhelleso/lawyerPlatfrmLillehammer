@@ -101,6 +101,7 @@ require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
 require("./routes/loginRoute")(app);
 require("./routes/dashboardRoute")(app);
+require("./routes/publishPost")(app);
 
 // serve ut production assets
 if (process.env.NODE_ENV === "production") {

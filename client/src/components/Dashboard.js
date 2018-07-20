@@ -11,7 +11,7 @@ class Dashboard extends Component {
 
     renderMonths() {
         return MONTHS.map((month) =>
-            <option value={MONTHS.indexOf(month)}>{month.toUpperCase()}</option>
+            <option key={month} value={MONTHS.indexOf(month)}>{month.toUpperCase()}</option>
         );
     }
 
@@ -34,6 +34,10 @@ class Dashboard extends Component {
                             <option value='2'>Fem Kjappe</option>
                             <option value='3'>Studenttips</option>
                         </Input>
+                    </Row>
+                    <Row>
+                        <Col l={2} m={3} s={1}/>
+                        <Input id="titelInput" l={8} m={6} s={10} label="Titel" type='textarea' />
                     </Row>
                     <Row>
                         <Col l={2} m={3} s={1}/>
@@ -77,26 +81,29 @@ function checkSessionStorage() {
 function publishPost() {
     console.log(123);
     const postType = document.querySelector("#archiveSelect").value;
+    const postMonth = document.querySelector("#monthSelect").value;
+    const postTitel = document.querySelector("#titelInput").value;
     const postIntro = document.querySelector("#introInput").value;
     const postBody = document.querySelector("#postBody").value;
 
-    /*fetch(`/api/publishPost`, {
+    fetch(`/api/publishPost`, {
         method: 'POST',
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+            year: new Date().getFullYear(),
+            month: postMonth,
             category: postType,
+            titel: postTitel,
             intro: postIntro,
             postBody: postBody
 
         })
-    })
-    .then(res => res.json())
-    .then(res => */
+    });
 
-    console.log(postType, postIntro, postBody);
+    console.log(postType, postMonth, postTitel, postIntro, postBody);
 }
 
 export default Dashboard;
