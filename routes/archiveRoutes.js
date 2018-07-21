@@ -20,19 +20,19 @@ module.exports = app => {
 
         if (category != "all") {
             switch (category) {
-                case "manedenssak":
+                case "faglig-artikkel":
                     Article.find({ "year": year, "month": month }, (err, article) => {
                         res.send(article);
                     });
                 break;
                 
-                case "femkjappe":
+                case "litt-av-hvert":
                     Question.find({ "year": year, "month": month }, (err, question) => {
                         res.send(question);
                     });
                 break;
                 
-                case "studenttips":
+                case "aktuelt":
                     Tip.find({ "year": year, "month": month }, (err, tip) => {
                         res.send(tip);
                     });

@@ -30,9 +30,9 @@ class Article extends Component {
                             <div>
                                 <p className="cardIntro">{data.intro}</p>
                                 <Collection>
-                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/manedenssak`}><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
-                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/femkjappe`}><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
-                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/studenttips`}><Icon small left>school</Icon> Studenttips</CollectionItem>
+                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/faglig-artikkel`}><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
+                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/litt-av-hvert`}><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
+                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/aktuelt`}><Icon small left>school</Icon> Studenttips</CollectionItem>
                                 </Collection>
                             </div>
                         }>

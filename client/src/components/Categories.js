@@ -31,7 +31,7 @@ class Categories extends Component {
             const question = this.state.questions.map((questions) => {
                 const tip = this.state.tips.map((tips) => {
                     return (
-                        <section key="sistenytt">
+                        <section key="categories">
                             <div className="genreOverlay">
                                 <Parallax id="landingCover" imageSrc={`/img/img${article.month + 1}.jpg`} />
                             </div>
