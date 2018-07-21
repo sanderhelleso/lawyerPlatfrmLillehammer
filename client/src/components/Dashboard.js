@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Tabs, Tab, Input, Row, Button } from "react-materialize";
+import { Col, Tabs, Tab, Toast, Input, Row, Button } from "react-materialize";
 import TinyMCE from 'react-tinymce';
 import { MONTHS } from "../globals/months";
 
@@ -34,9 +34,9 @@ class Dashboard extends Component {
                     <Row>
                         <Col l={2} m={3} s={1}/>
                         <Input id="archiveSelect" l={8} m={6} s={10} type='select' label="Kategori" defaultValue={"1"} >
-                            <option value='1'>Månedens Sak</option>
-                            <option value='2'>Fem Kjappe</option>
-                            <option value='3'>Studenttips</option>
+                            <option value='1'>Faglig Artikkel</option>
+                            <option value='2'>Litt Av Hvert</option>
+                            <option value='3'>Aktuelt</option>
                         </Input>
                     </Row>
                     <Row>
@@ -90,7 +90,7 @@ function publishPost() {
     const postIntro = document.querySelector("#introInput").value;
     const postBody = document.querySelector("#postBody").value;
 
-    fetch(`/api/publishPost`, {
+    /*fetch(`/api/publishPost`, {
         method: 'POST',
             headers: {
             'Accept': 'application/json',
@@ -106,7 +106,21 @@ function publishPost() {
             postBody: postBody
 
         })
+    });*/
+
+    resetForm();
+
+}
+
+function resetForm() {
+    const inputs = document.querySelectorAll("input, textarea");
+    inputs.forEach(input => {
+        console.log(input);
+        if (!input.classList.contains("select-dropdown")) {
+            input.value = "";
+        }
     });
+    window.Materialize.toast('Post ble suksessfullt publisert!', 4000)
 }
 
 export default Dashboard;

@@ -29,7 +29,7 @@ class RecentArticle extends Component {
                         title={`JUSSPOST #${data.article_id}`}
                         reveal={
                             <div>
-                                <p className="cardIntro">{data.intro}</p>
+                                <p className="cardIntro">{trunkate(data.intro)}</p>
                                 <Collection>
                                     <CollectionItem href="/sistenytt/manedenssak"><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
                                     <CollectionItem href="/sistenytt/femkjappe"><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
@@ -37,7 +37,7 @@ class RecentArticle extends Component {
                                 </Collection>
                             </div>
                         }>
-                        <p className="cardIntro">{data.intro}</p>
+                        <p className="cardIntro">{trunkate(data.intro)}</p>
                         <p><a href="/sistenytt">Les mer</a></p>
                     </Card>
                 </Col>
@@ -45,6 +45,10 @@ class RecentArticle extends Component {
         });
         return cardData;
     }
+}
+
+function trunkate(text) {
+    return `${text.substring(0, 150)}...`;
 }
 
 export default RecentArticle;
