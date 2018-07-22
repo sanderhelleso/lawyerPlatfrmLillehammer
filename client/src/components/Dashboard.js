@@ -4,11 +4,6 @@ import TinyMCE from 'react-tinymce';
 import { MONTHS } from "../globals/months";
 
 class Dashboard extends Component {
-
-    handleEditorChange(e) {
-        console.log(e.target.getContent());
-    }
-
     renderMonths() {
         return MONTHS.map((month) =>
             <option key={month} value={MONTHS.indexOf(month)}>{month.toUpperCase()}</option>
