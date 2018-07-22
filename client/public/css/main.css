@@ -12,7 +12,45 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #fafafa;
+    overflow: hidden
 }
+
+#loadingScreen {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: #000000;
+    z-index: 1000000;
+}
+
+.loading {
+    font-size: 60px;
+}
+
+.loading:after {
+    content: ' .';
+    animation: dots 1s steps(5, end) infinite;}
+  
+  @keyframes dots {
+    0%, 20% {
+      color: rgba(0,0,0,0);
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    40% {
+      color: white;
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    60% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 white;}}
+  
 
 .navbar-fixed {
     z-index: 10000;
@@ -282,14 +320,6 @@ hr {
     font-size: 16px;
     opacity: 0.4;
     font-weight: 100;
-}
-
-#loadingScreen {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000000;
 }
 
 footer {
