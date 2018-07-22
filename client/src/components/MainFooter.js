@@ -5,7 +5,7 @@ import { Footer } from "react-materialize";
 class MainFooter extends Component {
     render() {
         return (
-            <Footer copyrights="&copy; 2018 Jussbloggen"
+            <Footer copyrights="&copy; 2018 Obiterdictum"
                 moreLinks={
                     <a id="semanta" className="right" href="http://semanta.no/" target="_blank"><img src="/img/semanta.png" alt="Semanta Logo" /> Utviklet og levert av Semanta</a>
                 }
@@ -22,9 +22,9 @@ class MainFooter extends Component {
                     </ul>
                 }
                 >
-                    <h5 id="footerHeading">JUSSBLOGGEN</h5>
+                    <h5 id="footerHeading">Obiterdictum</h5>
                     <hr id="footerHr" />
-                    <p id="footerIntro">Jussbloggen er et frivillig prosjekt utført av jussstudenter i Lillehammer og har som mål å dekke viktige saker samt hjelpe studener</p>
+                    <p id="footerIntro">Obiterdictum er et frivillig prosjekt utført av jussstudenter ved Høgskolen i Innlandet avdeling Lillehammer og har som mål å dekke viktige saker samt hjelpe studenter innen juss.</p>
             </Footer>
         )
     }

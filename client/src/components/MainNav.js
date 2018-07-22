@@ -11,7 +11,7 @@ class MainNav extends Component {
 
     render() {
         return (
-            <Navbar id="nav" brand='JUSSBLOGGEN' href="/" right fixed >
+            <Navbar id="nav" brand='Obiterdictum' href="/" right fixed >
                 <NavItem href='/sistenytt'>Siste Nytt</NavItem>
                 <NavItem href='/arkiv'>Arkivet</NavItem>
             </Navbar>
