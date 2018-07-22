@@ -56,6 +56,15 @@ body {
     display: none;
 }
 
+#refresh {
+    display: none;
+}
+
+#refresh a {
+    color: #C5B358;
+    font-size: 20px;
+}
+
 .brand-logo {
     font-family: 'Cinzel', serif;
     color: #C5B358 !important;
