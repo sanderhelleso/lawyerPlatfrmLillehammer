@@ -10,6 +10,7 @@ import MainNav from "./MainNav";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Archive from "./Archive";
+import LoadingScreen from "./LoadingScreen";
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Route path="/" component={MainNav} />
+                    <Route path="/" component={LoadingScreen} />
                     <Route exact path="/" component={Landing} />
                     <Route path="/dashboard" component={Dashboard} /> 
                     <Route exact path="/login" component={Login} />

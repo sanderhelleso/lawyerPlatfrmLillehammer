@@ -19,7 +19,7 @@ class Archive extends Component {
                 </div>
                 <div id="archiveCont" className="container">
                     <Row>
-                        <h5 className="center-align">Velg et år for å se tilhørende innlegg</h5>
+                        <h5 className="center-align selectYear">Velg et år for å se tilhørende innlegg</h5>
                         <Col l={3} m={3} s={2}/>
                         <Input id="archiveSelect" l={6} m={6} s={8} type='select' label="År" defaultValue={new Date().getFullYear()} onChange={sort}>
                             <option disabled>Velg et år</option>

@@ -36,7 +36,7 @@ class Categories extends Component {
                                 <Parallax id="landingCover" imageSrc={`/img/img${article.month + 1}.jpg`} />
                             </div>
                             <div id="headingCont">
-                                <h1 id="heading">Sistenytt fra <br /> Obiterdictum</h1>
+                                <h1 id="heading">Siste Nytt</h1>
                                 <h5 id="headingMonth">{MONTHS[article.month]}</h5>
                                 <h2 id="headingYear">{article.year}</h2>
                             </div>

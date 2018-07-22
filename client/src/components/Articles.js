@@ -20,6 +20,7 @@ class Articles extends Component {
                     </Tab>
                     <Tab title="Arkivet" className="animated fadeIn">
                         <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkivet</h3>
+                        <h5 className="center-align selectYear">Velg et år for å se tilhørende innlegg</h5>
                         <Row>
                             <Col l={10} m={9} s={2}/>
                             <Input id="archiveSelect" l={2} m={3} s={8} type='select' label="År" defaultValue={new Date().getFullYear()} onChange={sort}>

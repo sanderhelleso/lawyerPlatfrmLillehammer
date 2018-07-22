@@ -25,7 +25,7 @@ class RecentArticle extends Component {
             return (
                 <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
                     <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
-                        title={`JUSSPOST #${data.article_id}`}
+                        title={`#${data.article_id}`}
                         reveal={
                             <div>
                                 <p className="cardIntro">{trunkate(data.intro)}</p>
