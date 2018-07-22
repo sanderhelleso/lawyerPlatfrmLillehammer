@@ -4,7 +4,7 @@ export function contentLoaded() {
     document.querySelector(".genreOverlay").className = "genreOverlay animated fadeInUp";
     document.querySelector(".navbar-fixed").className = "navbar-fixed animated fadeInDown";
     document.querySelector(".navbar-fixed").style.display = "block";
-
+    document.querySelector("body").style.background = "#fafafa";
 
     setTimeout(() => {
         document.querySelector(".navbar-fixed").className = "navbar-fixed";

@@ -3,6 +3,12 @@ import { Row, Input, Col, Button } from "react-materialize";
 
 
 class Login extends Component {
+
+    componentDidMount() {
+        document.querySelector("body").style.backgroundColor = "#fafafa";
+        document.querySelector(".navbar-fixed").style.display = "block";
+    }
+
     render() {
         return (
             <Row>

@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class LoadingScreen extends Component {
+
+    componentDidMount() {
+        showErrorMsg();
+    }
+
     render() {
         return (
             <div id="loadingScreen">
@@ -13,6 +18,12 @@ class LoadingScreen extends Component {
             </div>
         )
     }
+}
+
+function showErrorMsg() {
+    setTimeout(() => {
+        document.querySelector("#refresh").style.display = "block";
+    }, 5000);
 }
 
 export default LoadingScreen;

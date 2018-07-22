@@ -20,12 +20,14 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Route path="/" component={MainNav} />
-                    <Route path="/" component={LoadingScreen} />
+                    <Route exact path="/" component={LoadingScreen} />
                     <Route exact path="/" component={Landing} />
                     <Route path="/dashboard" component={Dashboard} /> 
                     <Route exact path="/login" component={Login} />
+                    <Route path="/sistenytt" component={LoadingScreen} />
                     <Route exact path="/sistenytt" component={Categories} /> 
                     <Route exact path="/sistenytt/*" component={Layout} />
+                    <Route path="/arkiv" component={LoadingScreen} />
                     <Route exact path="/arkiv" component={Archive} />
                     <Route exact path="/arkiv/*/*" component={setRoute()} />
                     <Route path="/" component={MainFooter} /> 

@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #fafafa;
+    background-color: #000000;
 }
 
 #loadingScreen {
@@ -410,8 +410,8 @@ footer a img {
 }
 
 #loginCont h3 {
-    margin-top: 15%;
-    margin-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
 }
 
