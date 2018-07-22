@@ -16,6 +16,7 @@ class Article extends Component {
     }
 
     componentWillMount() {
+        console.log(123);
         this.loadData();
     }
 

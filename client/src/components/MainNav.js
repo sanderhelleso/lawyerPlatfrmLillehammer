@@ -14,8 +14,6 @@ class MainNav extends Component {
             <Navbar id="nav" brand='JUSSBLOGGEN' href="/" right fixed >
                 <NavItem href='/sistenytt'>Siste Nytt</NavItem>
                 <NavItem href='/arkiv'>Arkivet</NavItem>
-                <NavItem href='components.html'>Om Oss</NavItem>
-                <NavItem href='components.html'>Kontakt</NavItem>
             </Navbar>
         )
     }

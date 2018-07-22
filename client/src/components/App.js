@@ -9,11 +9,11 @@ import Categories from "./Categories";
 import MainNav from "./MainNav";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
+import Archive from "./Archive";
 
 class App extends Component {
 
     render() {
-        console.log(setRoute());
         return (
         <div>
             <BrowserRouter>
@@ -24,6 +24,7 @@ class App extends Component {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/sistenytt" component={Categories} /> 
                     <Route exact path="/sistenytt/*" component={Layout} />
+                    <Route exact path="/arkiv" component={Archive} />
                     <Route exact path="/arkiv/*/*" component={setRoute()} />
                     <Route path="/" component={MainFooter} /> 
                 </div>
@@ -34,11 +35,11 @@ class App extends Component {
 }
 
 function setRoute() {
-    if (window.location.href.split("/").length == 7) {
+    if (window.location.href.split("/").length === 7) {
         return Layout;
     }
 
-    else if (window.location.href.split("/").length == 6) {
+    else if (window.location.href.split("/").length === 6) {
         return Categories;
     }
 }
