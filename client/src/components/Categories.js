@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, CardTitle, Parallax } from "react-materialize";
 import { MONTHS } from "../globals/months";
+import { contentLoaded } from "../globals/loading";
 
 class Categories extends Component {
     state = {
@@ -20,6 +21,10 @@ class Categories extends Component {
             questions: json[1],
             tips: json[2]
         });
+
+        setTimeout(() => {
+            contentLoaded();
+        }, 1000);
     }
 
     componentWillMount() {
@@ -32,7 +37,7 @@ class Categories extends Component {
                 const tip = this.state.tips.map((tips) => {
                     return (
                         <section key="categories">
-                            <div className="genreOverlay">
+                            <div className="genreOverlay animated fadeIn">
                                 <Parallax id="landingCover" imageSrc={`/img/img${article.month + 1}.jpg`} />
                             </div>
                             <div id="headingCont">

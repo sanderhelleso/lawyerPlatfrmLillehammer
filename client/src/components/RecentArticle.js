@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Card, CardTitle, Collection, CollectionItem, Icon } from "react-materialize";
 import { MONTHS } from "../globals/months";
+import { contentLoaded } from "../globals/loading";
 
 class RecentArticle extends Component {
     state = {
@@ -12,7 +13,11 @@ class RecentArticle extends Component {
         const json = await res.json();
         this.setState({
             data: json
-        })
+        });
+
+        setTimeout(() => {
+            contentLoaded();
+        }, 1000);
     }
 
     componentWillMount() {

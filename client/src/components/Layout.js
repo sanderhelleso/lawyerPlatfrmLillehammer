@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Parallax } from "react-materialize";
 import { MONTHS } from "../globals/months";
+import { contentLoaded } from "../globals/loading";
 import Share from "./Share";
 
 class Layout extends Component {
@@ -17,7 +18,11 @@ class Layout extends Component {
         this.setState({
             data: json,
             section: setTitle(apiPath.split("/"))
-        })
+        });
+
+        setTimeout(() => {
+            contentLoaded();
+        }, 1000);
     }
 
     componentWillMount() {
@@ -29,7 +34,7 @@ class Layout extends Component {
             console.log(data);
             return (
                 <section key={data.title}>
-                    <div className="genreOverlay">
+                    <div className="genreOverlay animated fadeIn">
                         <Parallax id="landingCover" imageSrc={`/img/img${data.month + 1}.jpg`} />
                     </div>
                     <div id="headingCont">

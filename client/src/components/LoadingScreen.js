@@ -7,7 +7,7 @@ class LoadingScreen extends Component {
                 <div id="headingCont" className="animated fadeIn">
                     <h1 id="heading" className="center-align">Obiterdictum</h1>
                     <p className="center-align">Jurdiske nyheter og tips for jussstudentene i Lillehammer</p>
-                    <p class="loading center-align"></p>
+                    <p className="loading center-align"></p>
                 </div> 
             </div>
         )

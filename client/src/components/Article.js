@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Card, CardTitle, Collection, CollectionItem, Icon } from "react-materialize";
 import { MONTHS } from "../globals/months";
+import { contentLoaded } from "../globals/loading";
 
 class Article extends Component {
     state = {
@@ -10,13 +11,17 @@ class Article extends Component {
     async loadData() {
         const res = await fetch("/api/arkiv");
         const json = await res.json();
+        console.log(json);
         this.setState({
             data: json
-        })
+        });
+
+        setTimeout(() => {
+            contentLoaded();
+        }, 1000);
     }
 
     componentWillMount() {
-        console.log(123);
         this.loadData();
     }
 
