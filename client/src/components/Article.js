@@ -30,7 +30,7 @@ class Article extends Component {
                             <div>
                                 <p className="cardIntro">{trunkate(data.intro)}</p>
                                 <Collection>
-                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/faglig-artikkel`}><Icon small left>account_balance</Icon> Faglig Artikel</CollectionItem>
+                                    <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/faglig-artikkel`}><Icon small left>account_balance</Icon> Faglig Artikkel</CollectionItem>
                                     <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/litt-av-hvert`}><Icon small left>assignment</Icon> Litt Av Hvert</CollectionItem>
                                     <CollectionItem href={`/arkiv/${data.year}/${monthName.toLowerCase()}/aktuelt`}><Icon small left>school</Icon> Aktuelt</CollectionItem>
                                 </Collection>

@@ -8,7 +8,6 @@ class RecentArticle extends Component {
     };
 
     async loadData() {
-        console.log(123);
         const res = await fetch("/api/sistenytt");
         const json = await res.json();
         this.setState({
@@ -31,9 +30,9 @@ class RecentArticle extends Component {
                             <div>
                                 <p className="cardIntro">{trunkate(data.intro)}</p>
                                 <Collection>
-                                    <CollectionItem href="/sistenytt/manedenssak"><Icon small left>account_balance</Icon> Månedens sak</CollectionItem>
-                                    <CollectionItem href="/sistenytt/femkjappe"><Icon small left>assignment</Icon> 5 kjappe</CollectionItem>
-                                    <CollectionItem href="/sistenytt/studenttips"><Icon small left>school</Icon> Studenttips</CollectionItem>
+                                    <CollectionItem href="/sistenytt/faglig-artikkel"><Icon small left>account_balance</Icon> Faglig Artikkel</CollectionItem>
+                                    <CollectionItem href="/sistenytt/litt-av-hvert"><Icon small left>assignment</Icon> Litt Av Hvert</CollectionItem>
+                                    <CollectionItem href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
                                 </Collection>
                             </div>
                         }>
