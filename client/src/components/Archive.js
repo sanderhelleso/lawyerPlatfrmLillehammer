@@ -15,7 +15,7 @@ class Archive extends Component {
                     <h1 id="heading" className="center-align">Arkivet</h1>
                 </div>
                 <div className="genreOverlay">
-                    <Parallax id="landingCover" imageSrc="/img/landing.jpg"/>
+                    <Parallax id="landingCover" imageSrc="/img/img7.jpg"/>
                 </div>
                 <div id="archiveCont" className="container">
                     <Row>

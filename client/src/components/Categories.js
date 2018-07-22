@@ -63,8 +63,8 @@ class Categories extends Component {
                                     </Col>
                                     <Col l={4} m={8} s={12} offset="m2" className="animated fadeIn">
                                         <Card className='medium'
-                                            header={<a href={`${window.location.href}/akutelt`}> <CardTitle image='/img/studenttips.jpg' waves="light">Aktuelt</CardTitle> </a>}
-                                            actions={[<a href={`${window.location.href}/akutelt`}>Les mer</a>]}>
+                                            header={<a href={`${window.location.href}/aktuelt`}> <CardTitle image='/img/studenttips.jpg' waves="light">Aktuelt</CardTitle> </a>}
+                                            actions={[<a href={`${window.location.href}/aktuelt`}>Les mer</a>]}>
                                             <p className="cardIntro">{trunkate(tips.intro)}</p>
                                         </Card>
                                     </Col>

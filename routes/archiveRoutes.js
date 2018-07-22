@@ -19,6 +19,7 @@ module.exports = app => {
         const category = url[5];
 
         if (category != "all") {
+
             switch (category) {
                 case "faglig-artikkel":
                     Article.find({ "year": year, "month": month }, (err, article) => {
