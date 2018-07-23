@@ -99,7 +99,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
-require("./routes/loginRoute")(app);
+//require("./routes/loginRoute")(app);
 require("./routes/dashboardRoute")(app);
 require("./routes/publishPost")(app);
 
