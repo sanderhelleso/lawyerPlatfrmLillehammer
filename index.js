@@ -69,5 +69,5 @@ app.get("*", (req, res) => {
 });
 
 // start server
-server.listen(port);
+server.listen(port, host);
 console.log(`Magic is happening on ${port}`);

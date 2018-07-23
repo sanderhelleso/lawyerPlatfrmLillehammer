@@ -4,6 +4,12 @@ import TinyMCE from 'react-tinymce';
 import { MONTHS } from "../globals/months";
 
 class Dashboard extends Component {
+
+    componentDidMount() {
+        document.querySelector("body").style.backgroundColor = "#fafafa";
+        document.querySelector(".navbar-fixed").style.display = "block";
+    }
+
     renderMonths() {
         return MONTHS.map((month) =>
             <option key={month} value={MONTHS.indexOf(month)}>{month.toUpperCase()}</option>
@@ -68,6 +74,7 @@ class Dashboard extends Component {
 }
 
 function checkSessionStorage() {
+    
     if (window.sessionStorage.adminAuth === undefined) {
         window.location.replace("/");
     }
@@ -85,7 +92,7 @@ function publishPost() {
     const postIntro = document.querySelector("#introInput").value;
     const postBody = document.querySelector("#postBody").value;
 
-    /*fetch(`/api/publishPost`, {
+    fetch(`/api/publishPost`, {
         method: 'POST',
             headers: {
             'Accept': 'application/json',
@@ -101,7 +108,7 @@ function publishPost() {
             postBody: postBody
 
         })
-    });*/
+    });
 
     resetForm();
 

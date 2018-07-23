@@ -14,16 +14,11 @@ module.exports = app => {
             email: email
         })
         .exec(function (err, user) {
-            console.log(user);
-
             bcrypt.compare(password, user.password, function (err, result) {
                 if (result === true) {
-                    console.log("LOGGED IN");
                     if (user) {
                         req.session.userId = user._id;
-                        console.log(user);
                         jwt.sign({ user: req.session.userId }, process.env.SESSION_SECRET, (err, token) => {
-                            console.log(token);
                             res.send({
                                 token: token
                             })
