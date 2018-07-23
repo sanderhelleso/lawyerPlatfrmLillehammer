@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-/*
-const bcrypt = require("bcrypt");
-
 const userSchema = new Schema({
     email: {
         type: String,
@@ -23,6 +20,9 @@ const userSchema = new Schema({
         required: true,
     }
 });
+
+/*
+const bcrypt = require("bcrypt");
 
 //hashing a password before saving it to the database
 userSchema.pre('save', function (next) {
