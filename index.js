@@ -85,7 +85,7 @@ const host = process.env.HOST || 'localhost';
 
 //use sessions for tracking logins
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: "192i3u1908HDUIQWE783429JKQWEH827YQKEHWKE29813HJKQENDSGF",
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
