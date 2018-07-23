@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+/*const mongoose = require("mongoose");
 require("../models/User");
 const User = mongoose.model("user");
 const bcrypt = require("bcrypt");
@@ -62,4 +62,4 @@ module.exports = app => {
             res.send(403);
         }
     }
-}
+}*/
