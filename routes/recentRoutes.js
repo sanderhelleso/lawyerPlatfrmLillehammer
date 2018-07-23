@@ -36,7 +36,7 @@ module.exports = app => {
         });
     });
 
-    app.get("/api/sistenytt/akutelt", (req, res) => {
+    app.get("/api/sistenytt/aktuelt", (req, res) => {
         Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
             res.send(data);
         });

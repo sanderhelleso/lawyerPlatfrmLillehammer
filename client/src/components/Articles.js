@@ -15,11 +15,11 @@ class Articles extends Component {
             <div className="section container">
                 <Tabs className='tabs'>
                     <Tab title="Siste nytt" className="animated fadeIn" active>
-                        <h3 id="recentTxt" className="center-align animated fadeInRight">Siste nytt</h3>
+                        <h3 id="recentTxt" className="center-align animated fadeIn">Siste nytt</h3>
                         <RecentArticle />
                     </Tab>
                     <Tab title="Arkivet" className="animated fadeIn">
-                        <h3 id="recentTxt" className="center-align animated fadeInLeft">Arkivet</h3>
+                        <h3 id="recentTxt" className="center-align animated fadeIn">Arkivet</h3>
                         <h5 className="center-align selectYear">Velg et år for å se tilhørende innlegg</h5>
                         <Row>
                             <Col l={10} m={9} s={2}/>

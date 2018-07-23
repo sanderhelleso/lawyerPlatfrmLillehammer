@@ -32,51 +32,6 @@ const connectWithRetry = () => {
 };
 connectWithRetry();
 
-// schemas
-const Article = mongoose.model("articles");
-const Question = mongoose.model("questions");
-const Tip = mongoose.model("tips");
-//const User = mongoose.model("user");
-
-/*for (let i = 0; i < 12; i++) {
-    const article = new Article({
-        year: new Date().getFullYear() + 2,
-        month: i,
-        title: "Månedens sak i høyesteretten",
-        intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",
-        body: "Xorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus sapien, consequat sed dolor quis, rutrum facilisis leo. Sed quis rhoncus lorem. Aliquam erat volutpat. Sed aliquet, elit eget maximus euismod, justo libero aliquam metus, eu elementum ipsum massa sed quam. Integer molestie, dolor ut pellentesque pretium, velit augue suscipit nunc, a suscipit elit lorem pellentesque est. Suspendisse nec placerat mauris, ullamcorper semper lectus. Aenean ac rutrum lectus, ut consectetur libero. Nulla lacinia quam quis purus convallis tempus. Nunc porttitor sit amet velit id porttitor. Sed ac orci vel neque vestibulum sodales sed et felis."
-    });
-    article.save(() => {
-        console.log("SAVED ARTICLE")
-    });
-
-    const question = new Question({
-        year: new Date().getFullYear() + 2,
-        month: i,
-        title: "5 kjappe med El Nino",
-        intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",
-        body: "Xorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus sapien, consequat sed dolor quis, rutrum facilisis leo. Sed quis rhoncus lorem. Aliquam erat volutpat. Sed aliquet, elit eget maximus euismod, justo libero aliquam metus, eu elementum ipsum massa sed quam. Integer molestie, dolor ut pellentesque pretium, velit augue suscipit nunc, a suscipit elit lorem pellentesque est. Suspendisse nec placerat mauris, ullamcorper semper lectus. Aenean ac rutrum lectus, ut consectetur libero. Nulla lacinia quam quis purus convallis tempus. Nunc porttitor sit amet velit id porttitor. Sed ac orci vel neque vestibulum sodales sed et felis."
-    });
-    question.save(() => {
-        console.log("SAVED QUESTION");
-    });
-
-    const tip = new Tip({
-        year: new Date().getFullYear() + 2,
-        month: i,
-        title: "Månedens studentips",
-        intro: "Dette er noe intro squawkqweqweqweqweqweqweqweqwe",
-        body: "Xorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus sapien, consequat sed dolor quis, rutrum facilisis leo. Sed quis rhoncus lorem. Aliquam erat volutpat. Sed aliquet, elit eget maximus euismod, justo libero aliquam metus, eu elementum ipsum massa sed quam. Integer molestie, dolor ut pellentesque pretium, velit augue suscipit nunc, a suscipit elit lorem pellentesque est. Suspendisse nec placerat mauris, ullamcorper semper lectus. Aenean ac rutrum lectus, ut consectetur libero. Nulla lacinia quam quis purus convallis tempus. Nunc porttitor sit amet velit id porttitor. Sed ac orci vel neque vestibulum sodales sed et felis."
-    });
-    tip.save(() => {
-        console.log("SAVED TIP");
-    });
-}*/
-
-/*Question.findOne({ "title": "test" }, (err, article) => {
-    console.log(question.title);
-});*/
-
 // app
 const app = express();
 const server = http.createServer(app);
@@ -105,13 +60,13 @@ require("./routes/publishPost")(app);
 
 // serve ut production assets
 // serve out static files
-app.use(express.static("client/build"));
+/*app.use(express.static("client/build"));
 
 // if it dosent recognize the route
 const path = require("path");
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
+});*/
 
 // start server
 server.listen(port);
