@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 require("./models/Article");
 require("./models/Questions");
 require("./models/Tips");
-require("./models/User");
+//require("./models/User");
 
 // db
 mongoose.Promise = global.Promise;
@@ -36,7 +36,7 @@ connectWithRetry();
 const Article = mongoose.model("articles");
 const Question = mongoose.model("questions");
 const Tip = mongoose.model("tips");
-const User = mongoose.model("user");
+//const User = mongoose.model("user");
 
 /*for (let i = 0; i < 12; i++) {
     const article = new Article({
