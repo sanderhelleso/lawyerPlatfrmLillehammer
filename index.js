@@ -104,16 +104,14 @@ require("./routes/dashboardRoute")(app);
 require("./routes/publishPost")(app);
 
 // serve ut production assets
-if (process.env.NODE_ENV === "production") {
-    // serve out static files
-    app.use(express.static("client/build"));
+// serve out static files
+app.use(express.static("client/build"));
 
-    // if it dosent recognize the route
-    const path = require("path");
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-    });
-}
+// if it dosent recognize the route
+const path = require("path");
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 // start server
 server.listen(port);
