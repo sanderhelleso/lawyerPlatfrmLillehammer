@@ -116,5 +116,5 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // start server
-server.listen(port);
+server.listen(port, host);
 console.log(`Magic is happening on ${port}`);
