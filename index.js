@@ -18,7 +18,7 @@ require("./models/Tips");
 // db
 mongoose.Promise = global.Promise;
 const connectWithRetry = () => {
-    return mongoose.connect(encodeURI("mongodb://test:test123@ds239071.mlab.com:39071/jusslillehammer", err => {
+    return mongoose.connect(encodeURI(process.env.MONGO_URI, err => {
         if (err) {
             console.error('Failed to connect to mongo on startup - retrying in 5 sec');
             throw err;
@@ -40,7 +40,7 @@ const host = process.env.HOST || 'localhost';
 
 //use sessions for tracking logins
 app.use(session({
-    secret: "192i3u1908HDUIQWE783429JKQWEH827YQKEHWKE29813HJKQENDSGF",
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
@@ -60,13 +60,13 @@ require("./routes/publishPost")(app);
 
 // serve ut production assets
 // serve out static files
-/*app.use(express.static("client/build"));
+app.use(express.static("client/build"));
 
 // if it dosent recognize the route
 const path = require("path");
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});*/
+});
 
 // start server
 server.listen(port);
