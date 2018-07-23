@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const AutoIncrement = require('mongoose-sequence')(mongoose);
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
     email: {
@@ -21,9 +22,6 @@ const userSchema = new Schema({
     }
 });
 
-/*
-const bcrypt = require("bcrypt");
-
 //hashing a password before saving it to the database
 userSchema.pre('save', function (next) {
     const user = this;
@@ -34,7 +32,7 @@ userSchema.pre('save', function (next) {
       user.password = hash;
       next();
     })
-});*/
+});
 
 userSchema.plugin(AutoIncrement, {inc_field: 'user_id'});
 mongoose.model("user", userSchema);

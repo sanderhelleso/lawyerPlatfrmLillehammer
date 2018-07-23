@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 require("./models/Article");
 require("./models/Questions");
 require("./models/Tips");
-//require("./models/User");
+require("./models/User");
 
 // db
 mongoose.Promise = global.Promise;
@@ -54,7 +54,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/recentRoutes")(app);
 require("./routes/archiveRoutes")(app);
-//require("./routes/loginRoute")(app);
+require("./routes/loginRoute")(app);
 require("./routes/dashboardRoute")(app);
 require("./routes/publishPost")(app);
 
