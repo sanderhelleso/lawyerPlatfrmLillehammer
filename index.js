@@ -18,7 +18,7 @@ require("./models/User");
 // db
 mongoose.Promise = global.Promise;
 const connectWithRetry = () => {
-    return mongoose.connect(process.env.MONGO_URI, err => {
+    return mongoose.connect(encodeURI(process.env.MONGO_URI, err => {
         if (err) {
             console.error('Failed to connect to mongo on startup - retrying in 5 sec');
             throw err;
@@ -28,7 +28,7 @@ const connectWithRetry = () => {
         else {
             console.log("connected to DB!");
         }
-    });
+    }));
 };
 connectWithRetry();
 
