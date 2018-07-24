@@ -9,7 +9,7 @@ class MainFooter extends Component {
                 moreLinks={
                     <a id="semanta" className="right" href="http://semanta.no/" target="_blank"><img src="/img/semanta.png" alt="Semanta Logo" /> Utviklet og levert av Semanta</a>
                 }
-                links={
+                /*links={
                     <ul id="footerLinks">
                         <li><a className="grey-text text-lighten-3" href="#!"><i className="fa fa-facebook-square facebook"></i>
                         </a></li>
@@ -20,7 +20,7 @@ class MainFooter extends Component {
 
                         </a></li>
                     </ul>
-                }
+                }*/
                 >
                     <h5 id="footerHeading">Obiterdictum</h5>
                     <hr id="footerHr" />
