@@ -31,7 +31,6 @@ class Layout extends Component {
 
     render() {
         const layout = this.state.data.map((data) => {
-            console.log(data);
             return (
                 <section key={data.title}>
                     <div className="genreOverlay animated fadeIn">
