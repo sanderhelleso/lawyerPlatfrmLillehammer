@@ -9,8 +9,8 @@ export default class Contact extends Component {
     render() {
         return (
             <div id="contact">
-                <h2>Om Oss / Kontakt</h2>
-                <a href="mailto:obiterdictum18@gmail.com">obiterdictum18@gmail.com</a>
+                <h3>Er det noe du lurer på eller vil vi skal skrive om?</h3>
+                <h4>Send oss en E-post <a href="mailto:obiterdictum18@gmail.com">her</a></h4>
             </div>
         )
   }
