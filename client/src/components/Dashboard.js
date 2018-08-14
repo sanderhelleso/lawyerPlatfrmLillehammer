@@ -51,13 +51,12 @@ class Dashboard extends Component {
                     <Row>
                         <Col l={1} m={2} s={1}/>
                         <Col l={10} m={8} s={10}>
-                            <TinyMCE id="postBody"
-                                content="<p>Once upon a time...</p>"
+                            <TinyMCE id="postBody" className="mceEditor"
                                 config={{
                                 plugins: 'autolink link image lists print preview',
                                 toolbar: 'undo redo | bold italic | alignleft aligncenter alignright'
                                 }}
-                                onChange={this.handleEditorChange}
+                                onChange={handleEditorChange}
                             />
                         </Col>
                     </Row>
@@ -71,6 +70,11 @@ class Dashboard extends Component {
             )
         }
     }
+}
+
+let content = '';
+function handleEditorChange(e) {
+    content = e.target.getContent();
 }
 
 function checkSessionStorage() {
@@ -90,8 +94,6 @@ function publishPost() {
     const postMonth = document.querySelector("#monthSelect").value;
     const postTitle = document.querySelector("#titleInput").value;
     const postIntro = document.querySelector("#introInput").value;
-    const postBody = document.querySelector("#postBody").value;
-
     fetch(`/api/publishPost`, {
         method: 'POST',
             headers: {
@@ -105,19 +107,20 @@ function publishPost() {
             category: postType,
             title: postTitle,
             intro: postIntro,
-            postBody: postBody
+            postBody: content
 
         })
     });
 
-    resetForm();
-
+    setTimeout(() => {
+        resetForm();
+    }, 1000);
 }
 
 function resetForm() {
     const inputs = document.querySelectorAll("input, textarea");
+    content = '';
     inputs.forEach(input => {
-        console.log(input);
         if (!input.classList.contains("select-dropdown")) {
             input.value = "";
         }

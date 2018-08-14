@@ -28,7 +28,6 @@ class Login extends Component {
 function login() {
     const inputs = document.querySelectorAll("input");
     let token;
-    console.log(inputs);
     fetch(`/api/login`, {
         method: 'POST',
             headers: {
