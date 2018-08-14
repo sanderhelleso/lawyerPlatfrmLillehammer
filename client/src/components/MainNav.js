@@ -11,10 +11,10 @@ class MainNav extends Component {
 
     render() {
         return (
-            <Navbar id="nav" brand='Obiterdictum' href="/" right fixed >
+            <Navbar id="nav" brand='Obiter Dictum' href="/" right fixed >
                 <NavItem href='/sistenytt'>Siste Nytt</NavItem>
                 <NavItem href='/arkiv'>Arkivet</NavItem>
-                <NavItem href='/kontakt'>Kontakt</NavItem>
+                <NavItem href='/kontakt'>Kontakt / Om Oss</NavItem>
             </Navbar>
         )
     }

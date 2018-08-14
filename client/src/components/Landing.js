@@ -9,7 +9,7 @@ class Landing extends Component {
             <div>
                 <div id="headingCont" className="animated fadeIn">
                     <h1 id="heading" className="center-align">Obiter Dictum</h1>
-                    <p className="center-align">Jurdiske nyheter og tips for jusstudenter, av studentor</p>
+                    <p className="center-align">Jurdiske nyheter og tips for jusstudenter, av studenter</p>
                 </div>
                 <div className="genreOverlay">
                     <Parallax id="landingCover" imageSrc="/img/landing.jpg"/>

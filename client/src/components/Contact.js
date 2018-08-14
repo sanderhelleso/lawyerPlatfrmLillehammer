@@ -7,10 +7,14 @@ export default class Contact extends Component {
         document.body.style.backgroundColor = "#ffffff";
     }
 
+    componentDidMount() {
+        document.querySelector(".navbar-fixed").style.display = "block";
+    }
+
     render() {
         return (
             <div id="contact" className="container" >
-                <h1>Om Oss / Kontakt</h1>
+                <h1>Kontakt / Om Oss</h1>
                 <div id="contactBorder" />
                 <h3>Er det noe du lurer på eller vil vi skal skrive om?</h3>
                 <h4>Send oss en E-post <a href="mailto:obiterdictum18@gmail.com">her</a></h4>
