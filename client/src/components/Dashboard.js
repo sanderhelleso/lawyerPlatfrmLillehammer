@@ -113,19 +113,8 @@ function publishPost() {
     });
 
     setTimeout(() => {
-        resetForm();
+        window.Materialize.toast('Post ble suksessfullt publisert!', 4000)
     }, 1000);
-}
-
-function resetForm() {
-    const inputs = document.querySelectorAll("input, textarea");
-    content = '';
-    inputs.forEach(input => {
-        if (!input.classList.contains("select-dropdown")) {
-            input.value = "";
-        }
-    });
-    window.Materialize.toast('Post ble suksessfullt publisert!', 4000)
 }
 
 export default Dashboard;
