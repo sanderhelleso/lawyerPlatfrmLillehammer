@@ -24,7 +24,7 @@ class MainFooter extends Component {
                 >
                     <h5 id="footerHeading">Obiter Dictum</h5>
                     <hr id="footerHr" />
-                    <p id="footerIntro">Obiter Dictum er et frivillig prosjekt utført av jusstudenter ved Høgskolen i Innlandet avdeling Lillehammer og har som mål å dekke viktige saker samt hjelpe studenter innen juss.</p>
+                    <p id="footerIntro">Obiter Dictum er et frivillig prosjekt utført av jusstudenter ved Høgskolen i Innlandet avdeling Lillehammer og har som mål å dekke viktige saker samt hjelpe studenter innen jus.</p>
             </Footer>
         )
     }
