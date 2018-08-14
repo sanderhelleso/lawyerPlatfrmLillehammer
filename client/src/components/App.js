@@ -11,6 +11,7 @@ import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Archive from "./Archive";
 import LoadingScreen from "./LoadingScreen";
+import Contact from "./Contact";
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
                     <Route path="/arkiv" component={LoadingScreen} />
                     <Route exact path="/arkiv" component={Archive} />
                     <Route exact path="/arkiv/*/*" component={setRoute()} />
+                    <Route exact path="/kontakt" component={Contact} />
                     <Route path="/" component={MainFooter} /> 
                 </div>
             </BrowserRouter>

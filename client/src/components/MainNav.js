@@ -14,6 +14,7 @@ class MainNav extends Component {
             <Navbar id="nav" brand='Obiterdictum' href="/" right fixed >
                 <NavItem href='/sistenytt'>Siste Nytt</NavItem>
                 <NavItem href='/arkiv'>Arkivet</NavItem>
+                <NavItem href='/kontakt'>Kontakt</NavItem>
             </Navbar>
         )
     }
