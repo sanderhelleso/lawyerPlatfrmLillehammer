@@ -14,6 +14,12 @@ body {
     background-color: #000000;
 }
 
+#nav img {
+    height: 40px;
+    margin-top: 10px;
+    width: auto;
+}
+
 #loadingScreen {
     position: fixed;
     height: 100vh;

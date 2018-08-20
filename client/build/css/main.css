@@ -14,6 +14,12 @@ body {
     background-color: #000000;
 }
 
+#nav img {
+    height: 40px;
+    margin-top: 10px;
+    width: auto;
+}
+
 #loadingScreen {
     position: fixed;
     height: 100vh;
@@ -96,9 +102,6 @@ nav ul li a {
     font-family: 'Cinzel', serif;
 }
 
-#sidenav-overlay {
-}
-
 .button-collapse {
     float: right !important;
     opacity: 0.2;
@@ -106,6 +109,14 @@ nav ul li a {
 
 .parallax-container {
     height: 100vh;
+}
+
+.tabs {
+    margin-top: 50px;
+}
+
+.genreOverlay {
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
 }
 
 .genreOverlay, .card-image {
@@ -267,7 +278,7 @@ recentArticleHeader .card-image img {
 }
 
 #layoutTitle {
-    margin-top: 5%;
+    margin-top: 10%;
     letter-spacing: 5px;
     font-family: 'Crimson Text', serif;
 }
@@ -431,6 +442,65 @@ footer hr {
 
 .toast {
     background-color: #66bb6a !important;
+}
+
+#contact {
+    min-height: 60vh;
+    letter-spacing: 2px;
+}
+
+#contact #contactBorder {
+    width: 200px;
+    height: 3px;
+    background-color: #C5B358;
+    margin: 0 auto;
+    margin-bottom: 75px;
+}
+
+#contact h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 75px;
+    font-family: 'Cinzel', serif;
+}
+
+#contact h3 {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 25px;
+    font-family: 'Crimson Text', serif;
+}
+
+#contact h4 {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-family: 'Crimson Text', serif;
+}
+
+#contact h4 a {
+    text-transform: uppercase;
+    color: #C5B358;
+}
+
+#contact #team {
+    text-align: center;
+}
+
+#contact #team div {
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: #9e9e9e;
+    font-family: 'Crimson Text', serif;
+}
+
+#contact #team h5 {
+    margin-top: 100px;
+    margin-bottom: 75px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 40px;
 }
 
 @media only screen and (max-width: 1100px) {
