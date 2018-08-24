@@ -26,11 +26,12 @@ class RecentArticle extends Component {
 
     render() {
         const cardData = this.state.data.map((data) => {
+            console.log(data);
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
                     <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
-                        title={`#${data.article_id}`}
+                        title={`#${data.article_id || data.tips_id || data.question_id}`}
                         reveal={
                             <div>
                                 <p className="cardIntro">{trunkate(data.intro)}</p>
