@@ -64,28 +64,6 @@ class RecentArticle extends Component {
             }
             count++;
         });
-        /*while (this.state.isFilled != undefined) {
-            return this.state.isFilled.map((data) => {
-                console.log(data);
-                //return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
-
-                /*count++;
-                if (count === 1) {
-                    return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
-                }
-
-                    /*switch (count) {
-                        /*case 1:
-                            return <CollectionItem key={count} href="/sistenytt/faglig-artikkel"><Icon small left>account_balance</Icon> Faglig Artikkel</CollectionItem>
-    
-                        case 2:
-                            return <CollectionItem key={count} href="/sistenytt/litt-av-hvert"><Icon small left>assignment</Icon> Litt Av Hvert</CollectionItem>
-    
-                        case 3:
-                            console.log(123);
-                            return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
-                    }
-            });*/
     }
 
     render() {
