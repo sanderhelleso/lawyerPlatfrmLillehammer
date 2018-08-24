@@ -5,24 +5,17 @@ const Tip = mongoose.model("tips");
 
 module.exports = app => {
     app.get("/api/sistenytt", (req, res) => {
+        let json = [];
         Article.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
-            if (data.length  != 0) {
-                res.send(data);
-            }
-
-            else {
-                Question.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
-                    if (data.length  != 0) {
-                        res.send(data);
-                    }
-
-                    else {
-                        Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
-                            res.send(data);
-                        });
-                    }
+            json.push(data);
+            Question.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+                json.push(data);
+                Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
+                    json.push(data);
+                    console.log(json);
+                    res.send(json);
                 });
-            }
+            });
         });
     });
 

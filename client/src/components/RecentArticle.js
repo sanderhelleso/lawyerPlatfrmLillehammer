@@ -21,12 +21,31 @@ class RecentArticle extends Component {
     async loadData() {
         const res = await fetch("/api/sistenytt");
         const json = await res.json();
-        this.setState({
-            data: json
+        const isFilled = [];
+        let count = 0;
+        json.forEach(category => {
+            count++;
+            if (category.length != 0) {
+                isFilled.push(true);
+                this.setState({
+                    data: category
+                });
+            }
+
+            else {
+                isFilled.push(false);
+            }
+
+            if (count === 3) {
+                this.setState({
+                    isFilled: isFilled
+                });
+            }
         });
 
         setTimeout(() => {
             contentLoaded();
+            console.log(this.state)
         }, 1000);
     }
 
@@ -34,9 +53,12 @@ class RecentArticle extends Component {
         this.loadData();
     }
 
+    renderUrls() {
+        
+    }
+
     render() {
         const cardData = this.state.data.map((data) => {
-            console.log(data);
             const monthName = MONTHS[data.month].toUpperCase();
             return (
                 <Col id={data._id} key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
@@ -60,11 +82,6 @@ class RecentArticle extends Component {
         });
         return cardData;
     }
-}
-
-function openCategories() {
-    console.log(123);
-    document.querySelector('')
 }
 
 function trunkate(text) {
