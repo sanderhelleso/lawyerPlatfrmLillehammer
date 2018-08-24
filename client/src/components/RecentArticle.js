@@ -44,8 +44,8 @@ class RecentArticle extends Component {
         });
 
         setTimeout(() => {
+            this.renderUrls();
             contentLoaded();
-            console.log(this.state)
         }, 1000);
     }
 
@@ -54,7 +54,38 @@ class RecentArticle extends Component {
     }
 
     renderUrls() {
-        
+        console.log(this.state.isFilled, this.state.data);
+        let count = 0;
+        const collection = Array.from(document.getElementById(`${this.state.data[0]._id}`).querySelector('.collection').childNodes);
+        console.log(collection);
+        this.state.isFilled.forEach(status => {
+            if (status === false) {
+                collection[count].remove();
+            }
+            count++;
+        });
+        /*while (this.state.isFilled != undefined) {
+            return this.state.isFilled.map((data) => {
+                console.log(data);
+                //return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
+
+                /*count++;
+                if (count === 1) {
+                    return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
+                }
+
+                    /*switch (count) {
+                        /*case 1:
+                            return <CollectionItem key={count} href="/sistenytt/faglig-artikkel"><Icon small left>account_balance</Icon> Faglig Artikkel</CollectionItem>
+    
+                        case 2:
+                            return <CollectionItem key={count} href="/sistenytt/litt-av-hvert"><Icon small left>assignment</Icon> Litt Av Hvert</CollectionItem>
+    
+                        case 3:
+                            console.log(123);
+                            return <CollectionItem key={count} href="/sistenytt/aktuelt"><Icon small left>school</Icon> Aktuelt</CollectionItem>
+                    }
+            });*/
     }
 
     render() {
