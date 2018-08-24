@@ -4,6 +4,16 @@ import { MONTHS } from "../globals/months";
 import { contentLoaded } from "../globals/loading";
 
 class RecentArticle extends Component {
+    constructor(props) {
+        super(props);
+        this._onButtonClick = this._onButtonClick.bind(this);
+    }
+
+    _onButtonClick() {
+        document.getElementById(`${this.state.data[0]._id}`).querySelector('.card-content').querySelector('span').click();
+    }
+
+
     state = {
         data: [],
     };
@@ -29,8 +39,8 @@ class RecentArticle extends Component {
             console.log(data);
             const monthName = MONTHS[data.month].toUpperCase();
             return (
-                <Col key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
-                    <Card className="cardHeader recentArticleHeader" header={<a href="/sistenytt"> <CardTitle reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
+                <Col id={data._id} key={"recentArticle"} m={10} offset="m1" s={12} className="animated fadeIn">
+                    <Card className="cardHeader recentArticleHeader" header={<CardTitle onClick={this._onButtonClick} reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle>}
                         title={`#${data.article_id || data.tips_id || data.question_id}`}
                         reveal={
                             <div>
@@ -43,13 +53,18 @@ class RecentArticle extends Component {
                             </div>
                         }>
                         <p className="cardIntro">{trunkate(data.intro)}</p>
-                        <p><a href="/sistenytt">Les mer</a></p>
+                        <p><a onClick={this._onButtonClick}>Les mer</a></p>
                     </Card>
                 </Col>
             )
         });
         return cardData;
     }
+}
+
+function openCategories() {
+    console.log(123);
+    document.querySelector('')
 }
 
 function trunkate(text) {

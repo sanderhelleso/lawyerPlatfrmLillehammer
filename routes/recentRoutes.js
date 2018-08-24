@@ -17,7 +17,6 @@ module.exports = app => {
                     }
 
                     else {
-                        console.log(123);
                         Tip.find().sort({ _id: -1 }).limit(1).exec((err, data) => {
                             res.send(data);
                         });

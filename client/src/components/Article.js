@@ -28,9 +28,9 @@ class Article extends Component {
         const cardData = this.state.data.map((data) => {
             const monthName = MONTHS[data.month].toUpperCase();
             return (
-                <Col key={data.article_id} l={4} m={6} s={12} className={`animated fadeIn archiveCard ${data.year}`}>
+                <Col key={data.article_id || data.tips_id || data.question_id} l={4} m={6} s={12} className={`animated fadeIn archiveCard ${data.year}`}>
                     <Card className="cardHeader z-depth-2" header={<a href={`/arkiv/${data.year}/${monthName.toLowerCase()}`}><CardTitle id="archiveCard" reveal image={`/img/img${data.month + 1}.jpg`} waves='light'>{monthName} </CardTitle> </a>}
-                        title={`#${data.article_id}`}
+                        title={`#${data.article_id || data.tips_id || data.question_id}`}
                         reveal={
                             <div>
                                 <p className="cardIntro">{trunkate(data.intro)}</p>

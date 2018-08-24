@@ -24,6 +24,7 @@ class Categories extends Component {
 
         setTimeout(() => {
             contentLoaded();
+            console.log(this.state);
         }, 1000);
     }
 
@@ -38,7 +39,7 @@ class Categories extends Component {
                     return (
                         <section key="categories">
                             <div className="genreOverlay animated fadeIn">
-                                <Parallax id="landingCover" imageSrc={`/img/img${article.month + 1}.jpg`} />
+                                <Parallax id="landingCover" imageSrc={`/img/img${article.month || questions.month || tips.month + 1}.jpg`} />
                             </div>
                             <div id="headingCont">
                                 <h1 id="heading">Siste Nytt</h1>

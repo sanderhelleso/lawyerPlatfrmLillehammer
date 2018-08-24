@@ -7,7 +7,23 @@ const MONTHS = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "au
 module.exports = app => {
     app.get("/api/arkiv", (req, res) => {
         Article.find({}, (err, articles) => {
-            res.send(articles);
+            if (articles.length  != 0) {
+                res.send(articles);
+            }
+
+            else {
+                Question.find({}, (err, questions) => {
+                    if (questions.length  != 0) {
+                        res.send(questions);
+                    }
+
+                    else {
+                        Tip.find({}, (err, tips) => {
+                            res.send(tips);
+                        });
+                    }
+                });
+            }
         });
     });
 
