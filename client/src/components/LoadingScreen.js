@@ -10,7 +10,7 @@ class LoadingScreen extends Component {
         return (
             <div id="loadingScreen">
                 <div id="headingCont" className="animated fadeIn">
-                    <h1 id="heading" className="center-align">Obiterdictum</h1>
+                    <h1 id="heading" className="center-align">Obiter Dictum</h1>
                     <p className="center-align">Jurdiske nyheter og tips for jusstudenter, av studenter</p>
                     <p className="loading center-align"></p>
                     <p id="refresh" className="animated fadeIn"><span>Hmmm, det ser ut som vi har problemer med å laste inn siden</span><br /><br /><a href={`${window.location.href}`}> Prøv på nytt?</a></p>
