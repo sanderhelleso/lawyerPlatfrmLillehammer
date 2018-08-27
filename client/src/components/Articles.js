@@ -61,7 +61,6 @@ function sort() {
             isSorted = true;
         }
 
-        console.log(options);
         if (article.classList.contains(selectedYear)) {
             article.style.display = "block";
         }

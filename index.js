@@ -15,6 +15,10 @@ require("./models/Questions");
 require("./models/Tips");
 require("./models/User");
 
+process.on('uncaughtException', function (err) {
+    console.log(err);
+}); 
+
 // db
 mongoose.Promise = global.Promise;
 const connectWithRetry = () => {

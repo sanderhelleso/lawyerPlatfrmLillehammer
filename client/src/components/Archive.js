@@ -8,6 +8,18 @@ class Archive extends Component {
         sort();
     }
 
+    renderUrls() {
+        let count = 0;
+        const collection = Array.from(document.getElementById(`${this.state.data[0]._id}`).querySelector('.collection').childNodes);
+        console.log(collection);
+        this.state.isFilled.forEach(status => {
+            if (status === false) {
+                collection[count].remove();
+            }
+            count++;
+        });
+    }
+
     render() {
         return (
             <div>

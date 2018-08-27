@@ -24,6 +24,7 @@ class RecentArticle extends Component {
         const isFilled = [];
         let count = 0;
         json.forEach(category => {
+            console.log(category);
             count++;
             if (category.length != 0) {
                 isFilled.push(true);
@@ -54,7 +55,6 @@ class RecentArticle extends Component {
     }
 
     renderUrls() {
-        console.log(this.state.isFilled, this.state.data);
         let count = 0;
         const collection = Array.from(document.getElementById(`${this.state.data[0]._id}`).querySelector('.collection').childNodes);
         console.log(collection);

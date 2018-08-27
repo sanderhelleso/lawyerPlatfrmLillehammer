@@ -11,6 +11,9 @@ class Article extends Component {
     async loadData() {
         const res = await fetch("/api/arkiv");
         const json = await res.json();
+        const isFilled = [];
+        let count = 0;
+        console.log(json);
         this.setState({
             data: json
         });

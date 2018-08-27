@@ -6,24 +6,16 @@ const MONTHS = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "au
 
 module.exports = app => {
     app.get("/api/arkiv", (req, res) => {
+        let json = [];
         Article.find({}, (err, articles) => {
-            if (articles.length  != 0) {
-                res.send(articles);
-            }
-
-            else {
-                Question.find({}, (err, questions) => {
-                    if (questions.length  != 0) {
-                        res.send(questions);
-                    }
-
-                    else {
-                        Tip.find({}, (err, tips) => {
-                            res.send(tips);
-                        });
-                    }
+            json.push(articles)
+            Question.find({}, (err, questions) => {
+                json.push(questions)
+                Tip.find({}, (err, tips) => {
+                    json.push(tips)
+                    res.send(json);
                 });
-            }
+            });
         });
     });
 
@@ -61,6 +53,7 @@ module.exports = app => {
         else {
             let json = [];
             Article.find({ "year": year, "month": month }, (err, article) => {
+                console.log(article);
                 json.push(article);
                 Question.find({ "year": year, "month": month }, (err, question) => {
                     json.push(question);
@@ -69,7 +62,7 @@ module.exports = app => {
                         res.send(json);
                     });
                 });
-            })
+            });
         }
     });
 }
